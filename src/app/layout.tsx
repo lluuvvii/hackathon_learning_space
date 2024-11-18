@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "@/app/globals.css";
 
 export const metadata = {
   title: "Home Page",

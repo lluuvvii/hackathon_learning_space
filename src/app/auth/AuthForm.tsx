@@ -41,7 +41,7 @@ export default function AuthForm({
   };
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center bg-white">
+    <div className="d-flex flex-column align-items-center justify-content-center fixed bg-light">
       <div
         className="card border-0 p-4 my-5"
         style={{
@@ -147,7 +147,7 @@ const FormInput = ({
     <label htmlFor={id} className="form-label fw-semibold">
       {label}
     </label>
-    <div className="input-group border border-black rounded border-1">
+    <div className="input-group">
       <span className="input-group-text bg-light">
         <i className={`bi ${icon}`}></i>
       </span>

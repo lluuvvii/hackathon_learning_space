@@ -15,7 +15,7 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center fixed vh-100 bg-light">
+    <div className="d-flex flex-column align-items-center justify-content-center bg-light">
       <div
         className="card border-0 p-4 my-5"
         style={{

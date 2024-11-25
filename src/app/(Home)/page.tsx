@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter()
   return (
     <div>
       {/* Navbar */}
@@ -35,7 +37,7 @@ export default function Home() {
       <section className="container mt-5">
         <h2 className="fw-bold text-dark">Tentang Kami</h2>
         <p className="text-dark">Hackathon Learning Space adalah platform untuk mendukung peserta hackathon dalam proses belajar, berinovasi, dan berkolaborasi secara efektif...</p>
-        <button className="btn text-light" style={{ backgroundColor: "#00897B" }}>Selengkapnya</button>
+        <button className="btn text-light" style={{ backgroundColor: "#00897B" }} onClick={() => router.push('/about')}>Selengkapnya</button>
       </section>
 
       {/* Fitur Utama Section */}

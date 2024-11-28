@@ -199,7 +199,7 @@ const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
     ) : (
       <>
         <Link href="/auth/sign-up" className="text-decoration-none" style={{ color: "#0d6efd" }}>
-          Don't have an account? Sign Up
+          Don&apos;t have an account? Sign Up
         </Link>
         <br />
         <Link href="/auth/forgot-password" className="text-decoration-none" style={{ color: "#0d6efd" }}>

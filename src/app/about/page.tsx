@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -31,10 +32,13 @@ export default function About() {
         <p style={{ maxWidth: "800px", margin: "20px auto", color: "#555" }}>
           Membangun generasi inovatif dengan menyediakan ruang belajar dan berkompetisi untuk menciptakan solusi teknologi bagi tantangan masa kini.
         </p>
-        <img
+        <Image
           src="/about-image.png"
           alt="Tentang Hackathon Learning Space"
-          style={{ maxWidth: "100%", borderRadius: "10px", marginTop: "20px" }}
+          layout="responsive"
+          width={800}
+          height={400}
+          style={{ borderRadius: "10px" }}
         />
       </section>
 
@@ -74,7 +78,14 @@ export default function About() {
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <img src="/goal1.png" alt="Tujuan" style={{ width: "100%", height: "150px", borderRadius: "10px", marginBottom: "10px" }} />
+            <Image
+              src="/goal1.png"
+              alt="Tujuan 1"
+              layout="responsive"
+              width={300}
+              height={150}
+              style={{ borderRadius: "10px" }}
+            />
             <p>Membangun platform pembelajaran interaktif yang menawarkan pengalaman belajar yang mendalam dan aplikatif.</p>
           </div>
           <div
@@ -88,7 +99,14 @@ export default function About() {
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <img src="/goal2.png" alt="Tujuan" style={{ width: "100%", height: "150px", borderRadius: "10px", marginBottom: "10px" }} />
+            <Image
+              src="/goal2.png"
+              alt="Tujuan 2"
+              layout="responsive"
+              width={300}
+              height={150}
+              style={{ borderRadius: "10px" }}
+            />
             <p>Menawarkan proyek nyata yang relevan dengan kebutuhan industri melalui komunitas online yang aktif.</p>
           </div>
         </div>

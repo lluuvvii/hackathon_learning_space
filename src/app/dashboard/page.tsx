@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 export default function Dashboard() {
@@ -17,10 +18,12 @@ export default function Dashboard() {
         }}
       >
         <div style={{ textAlign: "center", marginBottom: "20px" }}>
-          <img
+          <Image
             src="/logo.png"
             alt="Logo"
-            style={{ maxWidth: "100px", marginBottom: "10px" }}
+            width={100}
+            height={100}
+            style={{ marginBottom: "10px" }}
           />
         </div>
         <nav>

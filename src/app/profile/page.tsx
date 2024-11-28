@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -65,9 +66,11 @@ export default function UserProfile() {
           <div className="col-md-3 mb-4">
             <div className="card shadow-sm">
               <div className="card-body text-center">
-                <img
-                  src="https://via.placeholder.com/150"
+                <Image
+                  src="/"
                   alt="User Avatar"
+                  width={150}
+                  height={150}
                   className="img-fluid rounded-circle mb-3"
                 />
                 <h5>Kelvin Marsellino</h5>
@@ -89,9 +92,11 @@ export default function UserProfile() {
                 <h5 className="card-title">Profil</h5>
                 <div className="row mt-4">
                   <div className="col-md-3 text-center">
-                    <img
-                      src="https://via.placeholder.com/120"
+                    <Image
+                      src="/"
                       alt="User Profile"
+                      width={120}
+                      height={120}
                       className="img-fluid rounded-circle mb-2"
                     />
                     <button className="btn btn-outline-primary btn-sm">

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -108,12 +109,12 @@ export default function Komunitas() {
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <img
+              <Image
                 src={room.image}
                 alt={room.title}
+                width={300}
+                height={150}
                 style={{
-                  width: "100%",
-                  height: "150px",
                   objectFit: "cover",
                   borderRadius: "10px 10px 0 0",
                   marginBottom: "10px",

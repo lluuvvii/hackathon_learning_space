@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface AuthFormProps {
@@ -192,18 +193,18 @@ const SocialButtons = () => (
 const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
   <div className="text-center mt-3">
     {isSignUp ? (
-      <a href="/auth/sign-in" className="text-decoration-none" style={{ color: "#0d6efd" }}>
+      <Link href="/auth/sign-in" className="text-decoration-none" style={{ color: "#0d6efd" }}>
         Already have an account? Sign In
-      </a>
+      </Link>
     ) : (
       <>
-        <a href="/auth/sign-up" className="text-decoration-none" style={{ color: "#0d6efd" }}>
+        <Link href="/auth/sign-up" className="text-decoration-none" style={{ color: "#0d6efd" }}>
           Don't have an account? Sign Up
-        </a>
+        </Link>
         <br />
-        <a href="/auth/forgot-password" className="text-decoration-none" style={{ color: "#0d6efd" }}>
+        <Link href="/auth/forgot-password" className="text-decoration-none" style={{ color: "#0d6efd" }}>
           Forgot Password?
-        </a>
+        </Link>
       </>
     )}
   </div>

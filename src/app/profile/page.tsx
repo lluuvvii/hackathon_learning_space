@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function UserProfile() {
@@ -9,9 +10,9 @@ export default function UserProfile() {
         style={{ backgroundColor: "#00897B" }}
       >
         <div className="container">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" href="/">
             Hackathon Learning Space
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,34 +24,34 @@ export default function UserProfile() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" href="/">
                   Beranda
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/dashboard">
+                <Link className="nav-link" href="/dashboard">
                   Dashboard
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/projects">
+                <Link className="nav-link" href="/projects">
                   Proyek
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/community">
+                <Link className="nav-link" href="/community">
                   Komunitas
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/events">
+                <Link className="nav-link" href="/events">
                   Event
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/profile">
+                <Link className="nav-link" href="/profile">
                   Profil
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -140,21 +141,21 @@ export default function UserProfile() {
             Jl. Tentara Pelajar 50, Surabaya, Jawa Timur, Indonesia
           </p>
           <div className="mt-3">
-            <a href="/" className="text-white me-3">
+            <Link href="/" className="text-white me-3">
               Instagram
-            </a>
-            <a href="/" className="text-white me-3">
+            </Link>
+            <Link href="/" className="text-white me-3">
               TikTok
-            </a>
-            <a href="/" className="text-white me-3">
+            </Link>
+            <Link href="/" className="text-white me-3">
               Facebook
-            </a>
-            <a href="/" className="text-white me-3">
+            </Link>
+            <Link href="/" className="text-white me-3">
               LinkedIn
-            </a>
-            <a href="/" className="text-white me-3">
+            </Link>
+            <Link href="/" className="text-white me-3">
               Email
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

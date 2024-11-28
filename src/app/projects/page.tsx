@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const ProjectsPage = () => {
@@ -15,24 +16,24 @@ const ProjectsPage = () => {
         <div className="container d-flex justify-content-between align-items-center">
           <h1 style={{ margin: 0 }}>Hackathon Learning Space</h1>
           <nav>
-            <a
+            <Link
               href="/"
               style={{ color: "white", margin: "0 15px", textDecoration: "none" }}
             >
               Beranda
-            </a>
-            <a
+            </Link>
+            <Link
               href="/dashboard"
               style={{ color: "white", margin: "0 15px", textDecoration: "none" }}
             >
               Dashboard
-            </a>
-            <a
+            </Link>
+            <Link
               href="/projects"
               style={{ color: "white", margin: "0 15px", textDecoration: "none" }}
             >
               Proyek
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
@@ -217,9 +218,9 @@ const ProjectsPage = () => {
             <ul style={{ listStyle: "none", padding: "0", margin: "0", display: "flex", gap: "10px" }}>
               {["Pusat Bantuan", "FAQ", "Tentang Kami"].map((item, index) => (
                 <li key={index} style={{ display: "inline" }}>
-                  <a href="#" style={{ color: "#ffffff", textDecoration: "none" }}>
+                  <Link href="#" style={{ color: "#ffffff", textDecoration: "none" }}>
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function ForgotPassword() {
@@ -61,13 +62,13 @@ export default function ForgotPassword() {
           </button>
         </form>
         <div className="mt-4 text-center">
-          <a
+          <Link
             href="/auth/sign-in"
             className="text-decoration-none"
             style={{ color: "#0d6efd" }}
           >
             Back to Sign In
-          </a>
+          </Link>
         </div>
       </div>
     </div>

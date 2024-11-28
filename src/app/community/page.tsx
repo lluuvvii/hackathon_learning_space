@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 export default function Komunitas() {
@@ -7,18 +8,18 @@ export default function Komunitas() {
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "#00897B" }}>
         <div className="container">
-          <a className="navbar-brand" href="/">Hackathon Learning Space</a>
+          <Link className="navbar-brand" href="/">Hackathon Learning Space</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item"><a className="nav-link" href="/">Beranda</a></li>
-              <li className="nav-item"><a className="nav-link" href="/dashboard">Dashboard</a></li>
-              <li className="nav-item"><a className="nav-link" href="/projects">Proyek</a></li>
-              <li className="nav-item"><a className="nav-link" href="/community">Komunitas</a></li>
-              <li className="nav-item"><a className="nav-link" href="/events">Event</a></li>
-              <li className="nav-item"><a className="nav-link" href="/profile">Profil</a></li>
+              <li className="nav-item"><Link className="nav-link" href="/">Beranda</Link></li>
+              <li className="nav-item"><Link className="nav-link" href="/dashboard">Dashboard</Link></li>
+              <li className="nav-item"><Link className="nav-link" href="/projects">Proyek</Link></li>
+              <li className="nav-item"><Link className="nav-link" href="/community">Komunitas</Link></li>
+              <li className="nav-item"><Link className="nav-link" href="/events">Event</Link></li>
+              <li className="nav-item"><Link className="nav-link" href="/profile">Profil</Link></li>
             </ul>
           </div>
         </div>
@@ -144,9 +145,9 @@ export default function Komunitas() {
             <ul style={{ listStyle: "none", padding: "0", margin: "0", display: "flex", gap: "10px" }}>
               {["Pusat Bantuan", "FAQ", "Tentang Kami"].map((item, index) => (
                 <li key={index} style={{ display: "inline" }}>
-                  <a href="#" style={{ color: "#ffffff", textDecoration: "none" }}>
+                  <Link href="#" style={{ color: "#ffffff", textDecoration: "none" }}>
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function Komunitas() {
+  const router = useRouter()
   return (
     <div style={{ fontFamily: "Arial, sans-serif", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       {/* Navbar */}
@@ -42,6 +44,7 @@ export default function Komunitas() {
         <p className="text-dark">Ikuti Ruang untuk menjelajahi informasi mengenai hackathon.</p>
         <div style={{ display: "flex", gap: "10px", justifyContent: "center", marginTop: "15px" }}>
           <button
+            onClick={() => router.push('/community/create')}
             style={{
               backgroundColor: "#007c70",
               color: "#ffffff",

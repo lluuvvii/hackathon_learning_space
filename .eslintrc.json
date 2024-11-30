@@ -4,7 +4,6 @@
     "next/typescript"
   ],
   "rules": {
-    "import/no-commonjs": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-require-imports": "off"
   }
 }

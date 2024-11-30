@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import React, { useState } from 'react';
+import Link from 'next/link'
+import React, { useState } from 'react'
 
 interface AuthFormProps {
-  title: string;
-  buttonText: string;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  isSignUp?: boolean;
+  title: string
+  buttonText: string
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+  isSignUp?: boolean
 }
 
 export default function AuthForm({
@@ -21,25 +21,25 @@ export default function AuthForm({
     confirmPassword: '',
     showPassword: false,
     showConfirmPassword: false,
-  });
+  })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setFormState((prev) => ({ ...prev, [id]: value }));
-  };
+    const { id, value } = e.target
+    setFormState((prev) => ({ ...prev, [id]: value }))
+  }
 
   const toggleVisibility = (field: 'showPassword' | 'showConfirmPassword') => {
-    setFormState((prev) => ({ ...prev, [field]: !prev[field] }));
-  };
+    setFormState((prev) => ({ ...prev, [field]: !prev[field] }))
+  }
 
   const handleSignUpValidation = (e: React.FormEvent<HTMLFormElement>) => {
     if (isSignUp && formState.password !== formState.confirmPassword) {
-      e.preventDefault();
-      alert('Passwords do not match. Please try again.');
-      return;
+      e.preventDefault()
+      alert('Passwords do not match. Please try again.')
+      return
     }
-    onSubmit(e);
-  };
+    onSubmit(e)
+  }
 
   return (
     <div className='d-flex flex-column align-items-center justify-content-center bg-light'>
@@ -59,9 +59,9 @@ export default function AuthForm({
           {isSignUp && (
             <FormInput
               id='name'
-              label='Full Name'
+              label='Nama Lengkap'
               type='text'
-              placeholder='Enter your full name'
+              placeholder='Masukan nama lengkap'
               icon='bi-person'
               required
               onChange={handleChange}
@@ -90,9 +90,9 @@ export default function AuthForm({
           {isSignUp && (
             <FormInput
               id='confirmPassword'
-              label='Confirm Password'
+              label='Konfirmasi Kata Sandi'
               type={formState.showConfirmPassword ? 'text' : 'password'}
-              placeholder='Confirm your password'
+              placeholder='Konfirmasi kata sandi'
               icon='bi-lock'
               required
               onChange={handleChange}
@@ -100,11 +100,13 @@ export default function AuthForm({
               isPasswordVisible={formState.showConfirmPassword}
             />
           )}
-          <div className='text-end my-3'>
-            <Link href='/auth/forgot-password' className='text-decoration-none' style={{ color: '#00897B' }}>
-              Lupa kata sandi?
-            </Link>
-          </div>
+          {!isSignUp && (
+            <div className='text-end my-3'>
+              <Link href='/auth/forgot-password' className='text-decoration-none' style={{ color: '#00897B' }}>
+                Lupa kata sandi?
+              </Link>
+            </div>
+          )}
           <button
             type='submit'
             className='btn w-100'
@@ -119,14 +121,18 @@ export default function AuthForm({
         </form>
         <div className='my-3 text-center'>
           <p className='fw-semibold mb-2' style={{ color: '#6c757d' }}>
-            Atau masuk dengan:
+            {isSignUp ?
+              'Atau daftar dengan:'
+              :
+              'Atau masuk dengan:'
+            }
           </p>
           <SocialButtons />
         </div>
         <AuthLinks isSignUp={isSignUp} />
       </div>
     </div>
-  );
+  )
 }
 
 const FormInput = ({
@@ -140,15 +146,15 @@ const FormInput = ({
   toggleVisibility,
   isPasswordVisible,
 }: {
-  id: string;
-  label: string;
-  type: string;
-  placeholder: string;
-  icon: string;
-  required?: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  toggleVisibility?: () => void;
-  isPasswordVisible?: boolean;
+  id: string
+  label: string
+  type: string
+  placeholder: string
+  icon: string
+  required?: boolean
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  toggleVisibility?: () => void
+  isPasswordVisible?: boolean
 }) => (
   <div className='mb-3'>
     <label htmlFor={id} className='form-label fw-semibold'>
@@ -177,7 +183,7 @@ const FormInput = ({
       )}
     </div>
   </div>
-);
+)
 
 const SocialButtons = () => (
   <div className='d-flex justify-content-center gap-2'>
@@ -194,13 +200,13 @@ const SocialButtons = () => (
       <i className='bi bi-linkedin'></i> LinkedIn
     </button>
   </div>
-);
+)
 
 const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
   <div className='text-center mt-3'>
     {isSignUp ? (
       <Link href='/auth/sign-in' className='text-decoration-none' style={{ color: '#00897B' }}>
-        Already have an account? Sign In
+        Sudah mempunyai akun? Masuk di sini
       </Link>
     ) : (
       <>
@@ -210,4 +216,4 @@ const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
       </>
     )}
   </div>
-);
+)

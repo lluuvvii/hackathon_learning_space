@@ -1,6 +1,6 @@
 'use client'
 
-import AuthForm from "../AuthForm";
+import AuthForm from "../components/AuthForm";
 
 export default function SignUpPage() {
   const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
@@ -8,5 +8,5 @@ export default function SignUpPage() {
     console.log("Sign Up form submitted!");
   };
 
-  return <AuthForm title="Sign Up" buttonText="Sign Up" onSubmit={handleSignUp} isSignUp />;
+  return <AuthForm title="Daftar" buttonText="Daftar" onSubmit={handleSignUp} isSignUp />;
 }

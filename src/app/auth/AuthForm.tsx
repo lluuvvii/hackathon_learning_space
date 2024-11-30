@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import React, { useState } from "react";
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 interface AuthFormProps {
   title: string;
@@ -17,8 +17,8 @@ export default function AuthForm({
   isSignUp = false,
 }: AuthFormProps) {
   const [formState, setFormState] = useState({
-    password: "",
-    confirmPassword: "",
+    password: '',
+    confirmPassword: '',
     showPassword: false,
     showConfirmPassword: false,
   });
@@ -28,92 +28,98 @@ export default function AuthForm({
     setFormState((prev) => ({ ...prev, [id]: value }));
   };
 
-  const toggleVisibility = (field: "showPassword" | "showConfirmPassword") => {
+  const toggleVisibility = (field: 'showPassword' | 'showConfirmPassword') => {
     setFormState((prev) => ({ ...prev, [field]: !prev[field] }));
   };
 
   const handleSignUpValidation = (e: React.FormEvent<HTMLFormElement>) => {
     if (isSignUp && formState.password !== formState.confirmPassword) {
       e.preventDefault();
-      alert("Passwords do not match. Please try again.");
+      alert('Passwords do not match. Please try again.');
       return;
     }
     onSubmit(e);
   };
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center bg-light">
+    <div className='d-flex flex-column align-items-center justify-content-center bg-light'>
       <div
-        className="card border-0 p-4 my-5"
+        className='card border-0 p-4 my-5'
         style={{
-          maxWidth: "420px",
-          width: "100%",
-          borderRadius: "12px",
-          background: "transparent",
+          maxWidth: '420px',
+          width: '100%',
+          borderRadius: '12px',
+          background: 'transparent',
         }}
       >
-        <h2 className="text-center mb-4" style={{ color: "#0d6efd", fontWeight: "600" }}>
+        <h2 className='text-center mb-4' style={{ color: '#00897B', fontWeight: '600' }}>
           {title}
         </h2>
         <form onSubmit={handleSignUpValidation}>
           {isSignUp && (
             <FormInput
-              id="name"
-              label="Full Name"
-              type="text"
-              placeholder="Enter your full name"
-              icon="bi-person"
+              id='name'
+              label='Full Name'
+              type='text'
+              placeholder='Enter your full name'
+              icon='bi-person'
               required
               onChange={handleChange}
             />
           )}
           <FormInput
-            id="email"
-            label="Email Address"
-            type="email"
-            placeholder="Enter your email"
-            icon="bi-envelope"
+            id='email'
+            label='Alamat Email'
+            type='email'
+            placeholder='Masukan alamat email'
+            icon='bi-envelope'
             required
             onChange={handleChange}
           />
           <FormInput
-            id="password"
-            label="Password"
-            type={formState.showPassword ? "text" : "password"}
-            placeholder="Enter your password"
-            icon="bi-lock"
+            id='password'
+            label='Kata sandi'
+            type={formState.showPassword ? 'text' : 'password'}
+            placeholder='Masukan kata sandi'
+            icon='bi-lock'
             required
             onChange={handleChange}
-            toggleVisibility={() => toggleVisibility("showPassword")}
+            toggleVisibility={() => toggleVisibility('showPassword')}
             isPasswordVisible={formState.showPassword}
           />
           {isSignUp && (
             <FormInput
-              id="confirmPassword"
-              label="Confirm Password"
-              type={formState.showConfirmPassword ? "text" : "password"}
-              placeholder="Confirm your password"
-              icon="bi-lock"
+              id='confirmPassword'
+              label='Confirm Password'
+              type={formState.showConfirmPassword ? 'text' : 'password'}
+              placeholder='Confirm your password'
+              icon='bi-lock'
               required
               onChange={handleChange}
-              toggleVisibility={() => toggleVisibility("showConfirmPassword")}
+              toggleVisibility={() => toggleVisibility('showConfirmPassword')}
               isPasswordVisible={formState.showConfirmPassword}
             />
           )}
+          <div className='text-end my-3'>
+            <Link href='/auth/forgot-password' className='text-decoration-none' style={{ color: '#00897B' }}>
+              Lupa kata sandi?
+            </Link>
+          </div>
           <button
-            type="submit"
-            className="btn btn-primary w-100"
+            type='submit'
+            className='btn w-100'
             style={{
-              color: "#fff",
-              fontWeight: "600",
+              color: '#fff',
+              fontWeight: '600',
+              backgroundColor: '#00897B'
             }}
           >
             {buttonText}
           </button>
         </form>
-        <div className="my-3 text-center">
-          <p className="fw-semibold mb-2" style={{ color: "#6c757d" }}>
-            Or sign in with:
+        <div className='my-3 text-center'>
+          <p className='fw-semibold mb-2' style={{ color: '#6c757d' }}>
+            Atau masuk dengan:
           </p>
           <SocialButtons />
         </div>
@@ -144,29 +150,29 @@ const FormInput = ({
   toggleVisibility?: () => void;
   isPasswordVisible?: boolean;
 }) => (
-  <div className="mb-3">
-    <label htmlFor={id} className="form-label fw-semibold">
+  <div className='mb-3'>
+    <label htmlFor={id} className='form-label fw-semibold'>
       {label}
     </label>
-    <div className="input-group">
-      <span className="input-group-text bg-light">
+    <div className='input-group'>
+      <span className='input-group-text bg-light'>
         <i className={`bi ${icon}`}></i>
       </span>
       <input
         type={type}
         id={id}
-        className="form-control border"
+        className='form-control border'
         placeholder={placeholder}
         onChange={onChange}
         required={required}
       />
       {toggleVisibility && (
         <span
-          className="input-group-text bg-light"
-          style={{ cursor: "pointer" }}
+          className='input-group-text bg-light'
+          style={{ cursor: 'pointer' }}
           onClick={toggleVisibility}
         >
-          <i className={`bi ${isPasswordVisible ? "bi-eye-slash" : "bi-eye"}`}></i>
+          <i className={`bi ${isPasswordVisible ? 'bi-eye-slash' : 'bi-eye'}`}></i>
         </span>
       )}
     </div>
@@ -174,36 +180,32 @@ const FormInput = ({
 );
 
 const SocialButtons = () => (
-  <div className="d-flex justify-content-center gap-2">
+  <div className='d-flex justify-content-center gap-2'>
     <button
-      className="btn btn-outline-primary d-flex align-items-center gap-2"
-      style={{ borderColor: "#0d6efd" }}
+      className='btn btn-outline-primary d-flex align-items-center gap-2'
+      style={{ borderColor: '#00897B' }}
     >
-      <i className="bi bi-google"></i> Google
+      <i className='bi bi-google'></i> Google
     </button>
     <button
-      className="btn btn-outline-success d-flex align-items-center gap-2"
-      style={{ borderColor: "#198754" }}
+      className='btn btn-outline-success d-flex align-items-center gap-2'
+      style={{ borderColor: '#198754' }}
     >
-      <i className="bi bi-linkedin"></i> LinkedIn
+      <i className='bi bi-linkedin'></i> LinkedIn
     </button>
   </div>
 );
 
 const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
-  <div className="text-center mt-3">
+  <div className='text-center mt-3'>
     {isSignUp ? (
-      <Link href="/auth/sign-in" className="text-decoration-none" style={{ color: "#0d6efd" }}>
+      <Link href='/auth/sign-in' className='text-decoration-none' style={{ color: '#00897B' }}>
         Already have an account? Sign In
       </Link>
     ) : (
       <>
-        <Link href="/auth/sign-up" className="text-decoration-none" style={{ color: "#0d6efd" }}>
-          Don&apos;t have an account? Sign Up
-        </Link>
-        <br />
-        <Link href="/auth/forgot-password" className="text-decoration-none" style={{ color: "#0d6efd" }}>
-          Forgot Password?
+        <Link href='/auth/sign-up' className='text-decoration-none' style={{ color: '#00897B' }}>
+          Belum mempunyai akun? Daftar di sini
         </Link>
       </>
     )}

@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { FcGoogle } from 'react-icons/fc'
+import { FaLinkedin } from 'react-icons/fa'
 
 interface AuthFormProps {
   title: string
@@ -109,11 +111,10 @@ export default function AuthForm({
           )}
           <button
             type='submit'
-            className='btn w-100'
+            className='btn w-100 fw-bold'
             style={{
-              color: '#fff',
-              fontWeight: '600',
-              backgroundColor: '#00897B'
+              color: '#ffffff',
+              backgroundColor: '#00897B',
             }}
           >
             {buttonText}
@@ -187,17 +188,14 @@ const FormInput = ({
 
 const SocialButtons = () => (
   <div className='d-flex justify-content-center gap-2'>
-    <button
-      className='btn btn-outline-primary d-flex align-items-center gap-2'
-      style={{ borderColor: '#00897B' }}
-    >
-      <i className='bi bi-google'></i> Google
+    {/* Google Button */}
+    <button className="btn btn-outline-link d-flex align-items-center gap-2">
+      <FcGoogle size={24} /> Google
     </button>
-    <button
-      className='btn btn-outline-success d-flex align-items-center gap-2'
-      style={{ borderColor: '#198754' }}
-    >
-      <i className='bi bi-linkedin'></i> LinkedIn
+
+    {/* LinkedIn Button */}
+    <button className="btn btn-outline-link d-flex align-items-center gap-2">
+      <FaLinkedin size={24} color="#0077B5" /> LinkedIn
     </button>
   </div>
 )

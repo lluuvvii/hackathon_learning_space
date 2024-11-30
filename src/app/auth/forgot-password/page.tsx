@@ -28,23 +28,22 @@ export default function ForgotPassword() {
       >
         <h2
           className="text-center mb-4"
-          style={{ color: "#0d6efd", fontWeight: "600" }}
+          style={{ color: "#00897B", fontWeight: "600" }}
         >
-          Forgot Password
+          Lupa Kata Sandi
         </h2>
         <p
           className="text-center text-muted mb-4"
           style={{ fontSize: "0.9rem" }}
         >
-          Enter your email address and we&apos;ll send you a link to reset your
-          password.
+          Masukan alamat email anda dan kami akan mengirimkan link untuk mereset kata sandi anda
         </p>
         <form onSubmit={handleSubmit}>
           <FormInput
             id="email"
-            label="Email Address"
+            label="Alamat Email"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Masukan alamat email"
             icon="bi-envelope"
             required
             onChange={(e) => setEmail(e.target.value)}
@@ -53,21 +52,21 @@ export default function ForgotPassword() {
             type="submit"
             className="btn w-100"
             style={{
-              backgroundColor: "#0d6efd",
+              backgroundColor: "#00897B",
               color: "#fff",
               fontWeight: "600",
             }}
           >
-            Send Reset Link
+            Kirim
           </button>
         </form>
         <div className="mt-4 text-center">
           <Link
             href="/auth/sign-in"
             className="text-decoration-none"
-            style={{ color: "#0d6efd" }}
+            style={{ color: "#00897B" }}
           >
-            Back to Sign In
+            Kembali ke halaman Masuk
           </Link>
         </div>
       </div>

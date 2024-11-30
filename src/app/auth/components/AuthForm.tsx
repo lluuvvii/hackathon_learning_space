@@ -9,14 +9,14 @@ interface AuthFormProps {
   title: string
   buttonText: string
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
-  isSignUp?: boolean
+  isRegister?: boolean
 }
 
 export default function AuthForm({
   title,
   buttonText,
   onSubmit,
-  isSignUp = false,
+  isRegister = false,
 }: AuthFormProps) {
   const [formState, setFormState] = useState({
     password: '',
@@ -35,7 +35,7 @@ export default function AuthForm({
   }
 
   const handleSignUpValidation = (e: React.FormEvent<HTMLFormElement>) => {
-    if (isSignUp && formState.password !== formState.confirmPassword) {
+    if (isRegister && formState.password !== formState.confirmPassword) {
       e.preventDefault()
       alert('Passwords do not match. Please try again.')
       return
@@ -58,7 +58,7 @@ export default function AuthForm({
           {title}
         </h1>
         <form onSubmit={handleSignUpValidation}>
-          {isSignUp && (
+          {isRegister && (
             <FormInput
               id='name'
               label='Nama Lengkap'
@@ -89,7 +89,7 @@ export default function AuthForm({
             toggleVisibility={() => toggleVisibility('showPassword')}
             isPasswordVisible={formState.showPassword}
           />
-          {isSignUp && (
+          {isRegister && (
             <FormInput
               id='confirmPassword'
               label='Konfirmasi Kata Sandi'
@@ -102,7 +102,7 @@ export default function AuthForm({
               isPasswordVisible={formState.showConfirmPassword}
             />
           )}
-          {!isSignUp && (
+          {!isRegister && (
             <div className='text-end my-3'>
               <Link href='/auth/forgot-password' className='text-decoration-none fw-bold' style={{ color: '#00897B' }}>
                 Lupa kata sandi?
@@ -122,7 +122,7 @@ export default function AuthForm({
         </form>
         <div className='my-3 text-center'>
           <p className='fw-semibold mb-2' style={{ color: '#6c757d' }}>
-            {isSignUp ?
+            {isRegister ?
               'Atau daftar dengan:'
               :
               'Atau masuk dengan:'
@@ -130,7 +130,7 @@ export default function AuthForm({
           </p>
           <SocialButtons />
         </div>
-        <AuthLinks isSignUp={isSignUp} />
+        <AuthLinks isRegister={isRegister} />
       </div>
     </div>
   )
@@ -200,19 +200,19 @@ const SocialButtons = () => (
   </div>
 )
 
-const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
+const AuthLinks = ({ isRegister }: { isRegister: boolean }) => (
   <div className='text-center mt-3'>
-    {isSignUp ? (
+    {isRegister ? (
       <div>
         Sudah mempunyai akun?
-        <Link href='/auth/sign-in' className='text-decoration-none mx-1 fw-bold' style={{ color: '#00897B' }}>
+        <Link href='/auth/login' className='text-decoration-none mx-1 fw-bold' style={{ color: '#00897B' }}>
           Masuk di sini
         </Link>
       </div>
     ) : (
       <div>
         Belum mempunyai akun?
-        <Link href='/auth/sign-up' className='text-decoration-none mx-1 fw-bold' style={{ color: '#00897B' }}>
+        <Link href='/auth/register' className='text-decoration-none mx-1 fw-bold' style={{ color: '#00897B' }}>
           Daftar di sini
         </Link>
       </div>

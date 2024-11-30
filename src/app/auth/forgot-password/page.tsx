@@ -62,7 +62,7 @@ export default function ForgotPassword() {
         </form>
         <div className='mt-4 text-center'>
           <Link
-            href='/auth/sign-in'
+            href='/auth/login'
             className='text-decoration-none fw-bold'
             style={{ color: '#00897B' }}
           >

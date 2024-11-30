@@ -8,5 +8,5 @@ export default function SignUpPage() {
     console.log("Sign Up form submitted!");
   };
 
-  return <AuthForm title="Daftar" buttonText="Daftar" onSubmit={handleSignUp} isSignUp />;
+  return <AuthForm title="Daftar" buttonText="Daftar" onSubmit={handleSignUp} isRegister />;
 }

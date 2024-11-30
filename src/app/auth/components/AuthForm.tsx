@@ -52,9 +52,9 @@ export default function AuthForm({
           background: 'transparent',
         }}
       >
-        <h2 className='text-center mb-4' style={{ color: '#00897B', fontWeight: '600' }}>
+        <h1 className='text-start mb-4 fw-bold' style={{ color: '#00897B' }}>
           {title}
-        </h2>
+        </h1>
         <form onSubmit={handleSignUpValidation}>
           {isSignUp && (
             <FormInput
@@ -102,7 +102,7 @@ export default function AuthForm({
           )}
           {!isSignUp && (
             <div className='text-end my-3'>
-              <Link href='/auth/forgot-password' className='text-decoration-none' style={{ color: '#00897B' }}>
+              <Link href='/auth/forgot-password' className='text-decoration-none fw-bold' style={{ color: '#00897B' }}>
                 Lupa kata sandi?
               </Link>
             </div>
@@ -205,15 +205,19 @@ const SocialButtons = () => (
 const AuthLinks = ({ isSignUp }: { isSignUp: boolean }) => (
   <div className='text-center mt-3'>
     {isSignUp ? (
-      <Link href='/auth/sign-in' className='text-decoration-none' style={{ color: '#00897B' }}>
-        Sudah mempunyai akun? Masuk di sini
-      </Link>
-    ) : (
-      <>
-        <Link href='/auth/sign-up' className='text-decoration-none' style={{ color: '#00897B' }}>
-          Belum mempunyai akun? Daftar di sini
+      <div>
+        Sudah mempunyai akun?
+        <Link href='/auth/sign-in' className='text-decoration-none mx-1 fw-bold' style={{ color: '#00897B' }}>
+          Masuk di sini
         </Link>
-      </>
+      </div>
+    ) : (
+      <div>
+        Belum mempunyai akun?
+        <Link href='/auth/sign-up' className='text-decoration-none mx-1 fw-bold' style={{ color: '#00897B' }}>
+          Daftar di sini
+        </Link>
+      </div>
     )}
   </div>
 )

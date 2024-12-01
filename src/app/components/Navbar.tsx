@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import Logo from '@/../public/hackathon_learning_space_logo.png';
-import ProfileUser from '@/../public/Profil-removebg-preview 1.png';
+import Link from 'next/link'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
+import Logo from '@/../public/hackathon_learning_space_logo.png'
+import ProfileUser from '@/../public/Profil-removebg-preview 1.png'
 
 const links = [
   { name: 'Beranda', path: '/' },
@@ -13,17 +13,17 @@ const links = [
   { name: 'Proyek', path: '/projects' },
   { name: 'Komunitas', path: '/community' },
   { name: 'Event', path: '/events' },
-];
+]
 
 const Navbar = () => {
-  const pathname = usePathname();
-  const shouldShowNavbar = !pathname.startsWith('/auth');
+  const pathname = usePathname()
+  const shouldShowNavbar = !pathname.startsWith('/auth')
 
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false)
 
   const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
+    setDropdownVisible(!dropdownVisible)
+  }
 
   return (
     <>
@@ -31,15 +31,15 @@ const Navbar = () => {
         <>
           {/* Navbar */}
           <nav
-            className="navbar navbar-expand-lg fixed-top"
+            className='navbar navbar-expand-lg fixed-top'
             style={{ backgroundColor: '#00897B' }}
           >
-            <div className="container">
+            <div className='container'>
               {/* Logo */}
-              <Link href="/" className="navbar-brand d-flex align-items-center gap-2 text-white">
+              <Link href='/' className='navbar-brand d-flex align-items-center gap-2 text-white'>
                 <Image
                   src={Logo}
-                  alt="Hackathon Logo"
+                  alt='Hackathon Logo'
                   width={80}
                   height={40}
                   quality={100}
@@ -48,60 +48,60 @@ const Navbar = () => {
 
               {/* Toggler for mobile */}
               <button
-                className="navbar-toggler navbar-dark"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar"
-                aria-label="Toggle navigation"
+                className='navbar-toggler navbar-dark'
+                type='button'
+                data-bs-toggle='offcanvas'
+                data-bs-target='#offcanvasNavbar'
+                aria-controls='offcanvasNavbar'
+                aria-label='Toggle navigation'
               >
-                <span className="navbar-toggler-icon"></span>
+                <span className='navbar-toggler-icon'></span>
               </button>
 
               {/* Navigation Links (desktop view) */}
-              <div className="d-none d-lg-block">
-                <ul className="navbar-nav ms-auto d-flex align-items-center">
+              <div className='d-none d-lg-block'>
+                <ul className='navbar-nav ms-auto d-flex align-items-center'>
                   {links.map((link, index) => (
-                    <li className="nav-item" key={index}>
-                      <Link href={link.path} className="nav-link text-white">
+                    <li className='nav-item' key={index}>
+                      <Link href={link.path} className='nav-link text-white'>
                         {link.name}
                       </Link>
                     </li>
                   ))}
 
                   {/* Profile Dropdown */}
-                  <li className="nav-item dropdown ms-3 position-relative">
+                  <li className='nav-item dropdown ms-3 position-relative'>
                     <button
-                      className="btn p-0 border-0 bg-transparent"
+                      className='btn p-0 border-0 bg-transparent'
                       onClick={toggleDropdown}
                     >
                       <Image
                         src={ProfileUser}
-                        alt="Profile"
+                        alt='Profile'
                         width={40}
                         height={40}
-                        className="rounded-circle"
+                        className='rounded-circle'
                       />
                     </button>
 
                     {dropdownVisible && (
                       <ul
-                        className="dropdown-menu show position-absolute"
+                        className='dropdown-menu show position-absolute'
                         style={{ top: '100%', right: 0 }}
                       >
                         <li>
-                          <Link href="/profile" className="dropdown-item">
+                          <Link href='/profile' className='dropdown-item'>
                             Profil
                           </Link>
                         </li>
                         <li>
-                          <Link href="/auth/login" className="dropdown-item">
+                          <Link href='/auth/login' className='dropdown-item'>
                             Masuk
                           </Link>
                         </li>
                         <li>
                           <button
-                            className="dropdown-item"
+                            className='dropdown-item'
                             onClick={() => alert('Logout clicked!')}
                           >
                             Keluar
@@ -117,43 +117,43 @@ const Navbar = () => {
 
           {/* Offcanvas Sidebar (mobile view) */}
           <div
-            className="offcanvas offcanvas-start"
+            className='offcanvas offcanvas-start'
             tabIndex={-1}
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
+            id='offcanvasNavbar'
+            aria-labelledby='offcanvasNavbarLabel'
           >
-            <div className="offcanvas-header" style={{ backgroundColor: '#00897B' }}>
-              <h5 className="offcanvas-title text-white" id="offcanvasNavbarLabel">
+            <div className='offcanvas-header' style={{ backgroundColor: '#00897B' }}>
+              <h5 className='offcanvas-title text-white' id='offcanvasNavbarLabel'>
                 Menu
               </h5>
               <button
-                type="button"
-                className="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
+                type='button'
+                className='btn-close btn-close-white'
+                data-bs-dismiss='offcanvas'
+                aria-label='Close'
               ></button>
             </div>
-            <div className="offcanvas-body">
+            <div className='offcanvas-body'>
               {/* Offcanvas Links */}
-              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul className='navbar-nav justify-content-end flex-grow-1 pe-3'>
                 {links.map((link, index) => (
-                  <li className="nav-item" key={index}>
-                    <Link href={link.path} className="nav-link text-dark">
+                  <li className='nav-item' key={index}>
+                    <Link href={link.path} className='nav-link text-dark'>
                       {link.name}
                     </Link>
                   </li>
                 ))}
-                <li><Link href="/auth/login" className="nav-link text-dark">Masuk</Link></li>
+                <li><Link href='/auth/login' className='nav-link text-dark'>Masuk</Link></li>
               </ul>
 
               {/* Profile Icon in Offcanvas */}
-              <div className="mt-3">
+              <div className='mt-3'>
                 <Image
                   src={ProfileUser}
-                  alt="Profile"
+                  alt='Profile'
                   width={40}
                   height={40}
-                  className="rounded-circle"
+                  className='rounded-circle'
                 />
               </div>
             </div>
@@ -161,7 +161,7 @@ const Navbar = () => {
         </>
       ) : null}
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

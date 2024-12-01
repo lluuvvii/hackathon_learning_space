@@ -17,7 +17,7 @@ export default function Home() {
       {/* Tentang Kami Section */}
       <section className='container mt-5'>
         <h2 className='fw-bold text-dark'>Tentang Kami</h2>
-        <p className='text-dark'>Hackathon Learning Space adalah platform untuk mendukung peserta hackathon dalam proses belajar, berinovasi, dan berkolaborasi secara efektif...</p>
+        <p className='text-dark'>Hackathon Learning Space adalah sebuah platform yang dirancang secara khusus untuk mendukung peserta hackathon dalam proses belajar, berinovasi, dan berkolaborasi secara efektif. Platform ini dapat hadir dalam bentuk fisik, seperti coworking space atau area konferensi, maupun digital, seperti website atau aplikasi online. Tujuan utamanya adalah menciptakan lingkungan yang mendukung kreativitas, produktivitas, dan pertukaran ide secara dinamis di antara peserta hackathon, yang biasanya terdiri dari programmer, desainer, pengembang produk, hingga pemasar.</p>
         <button className='btn text-light' style={{ backgroundColor: '#00897B' }} onClick={() => router.push('/about')}>Selengkapnya</button>
       </section>
 

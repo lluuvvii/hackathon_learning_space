@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation'
+import Logo from '@/../public/hackathon_learning_space_logo.png'
+import ProfileUser from '@/../public/Profil-removebg-preview 1.png'
 
 const links = [
   { name: 'Beranda', path: '/' },
@@ -31,12 +33,12 @@ const Navbar = () => {
               {/* Logo */}
               <Link href='/' className='navbar-brand d-flex align-items-center gap-2 text-white'>
                 <Image
-                  src='/logo.png' // Ganti dengan path logo Anda
+                  src={Logo}
                   alt='Hackathon Logo'
-                  width={40}
+                  width={80}
                   height={40}
+                  quality={100}
                 />
-                <span className='fw-bold'>Hackathon Learning Space</span>
               </Link>
 
               {/* Toggler for mobile */}
@@ -64,7 +66,7 @@ const Navbar = () => {
                   {/* Profile Icon */}
                   <li className='nav-item ms-3'>
                     <Image
-                      src='/profile.png' // Ganti dengan path profile icon Anda
+                      src={ProfileUser}
                       alt='Profile'
                       width={40}
                       height={40}
@@ -121,7 +123,7 @@ const Navbar = () => {
         </>
         : null}
     </>
-  );
-};
+  )
+}
 
 export default Navbar

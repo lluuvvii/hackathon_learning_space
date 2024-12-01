@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function UserProfile() {
   return (
-    <div style={{ backgroundColor: '#F9F9F9', minHeight: '100vh', marginTop: '65px' }}>
+    <div style={{ backgroundColor: '#F9F9F9', marginTop: '65px' }}>
       {/* Container */}
       <div className='container py-5'>
         <div className='row'>
@@ -80,36 +80,6 @@ export default function UserProfile() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer
-        className='text-center text-white py-4'
-        style={{ backgroundColor: '#00897B' }}
-      >
-        <div className='container'>
-          <p className='mb-0'>Hackathon Learning Space</p>
-          <p className='mb-0'>
-            Jl. Tentara Pelajar 50, Surabaya, Jawa Timur, Indonesia
-          </p>
-          <div className='mt-3'>
-            <Link href='/' className='text-white me-3'>
-              Instagram
-            </Link>
-            <Link href='/' className='text-white me-3'>
-              TikTok
-            </Link>
-            <Link href='/' className='text-white me-3'>
-              Facebook
-            </Link>
-            <Link href='/' className='text-white me-3'>
-              LinkedIn
-            </Link>
-            <Link href='/' className='text-white me-3'>
-              Email
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

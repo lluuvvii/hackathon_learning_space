@@ -22,7 +22,7 @@ export default function Home() {
       </section>
 
       {/* Fitur Utama Section */}
-      <section className='container mt-5'>
+      <section className='container mt-5 mb-2'>
         <h2 className='fw-bold text-dark'>Fitur Utama Hackathon Learning Space</h2>
         <div className='row'>
           <FeatureCard
@@ -42,21 +42,6 @@ export default function Home() {
           />
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className='text-light mt-5 py-4' style={{ backgroundColor: '#00897B' }}>
-        <div className='container text-center'>
-          <p>Hackathon Learning Space</p>
-          <p>Jl. Tentara Pelajar 50, Surabaya, Jawa Timur, Indonesia</p>
-          <p>Pusat Bantuan | FAQ | Tentang Kami</p>
-          <div className='d-flex justify-content-center gap-3 mt-3'>
-            <SocialIcon icon='bi bi-youtube' />
-            <SocialIcon icon='bi bi-tiktok' />
-            <SocialIcon icon='bi bi-linkedin' />
-            <SocialIcon icon='bi bi-envelope' />
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
@@ -68,8 +53,4 @@ const FeatureCard = ({ title, description, color }: { title: string, description
       <p>{description}</p>
     </div>
   </div>
-)
-
-const SocialIcon = ({ icon }: { icon: string }) => (
-  <i className={`${icon} fs-4`} style={{ color: '#fff', cursor: 'pointer' }}></i>
 )

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 
 const ProjectsPage = () => {
@@ -164,40 +163,6 @@ const ProjectsPage = () => {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer
-        style={{
-          backgroundColor: '#006d5b',
-          color: '#ffffff',
-          padding: '20px',
-          marginTop: 'auto',
-          textAlign: 'center',
-        }}
-      >
-        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-          <div style={{ flex: '1', textAlign: 'left' }}>
-            <h3>Hackathon Learning Space</h3>
-            <p>Jl. Tentara pelajar 50, Surabaya, Jawa Timur, Indonesia</p>
-          </div>
-          <div style={{ flex: '1', textAlign: 'right' }}>
-            <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex', gap: '10px' }}>
-              {['Pusat Bantuan', 'FAQ', 'Tentang Kami'].map((item, index) => (
-                <li key={index} style={{ display: 'inline' }}>
-                  <Link href='#' style={{ color: '#ffffff', textDecoration: 'none' }}>
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div style={{ marginTop: '10px', display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
-              {['instagram', 'tiktok', 'facebook', 'linkedin', 'email', 'youtube'].map((platform, index) => (
-                <i key={index} className={`bi bi-${platform}`} style={{ fontSize: '1.5rem', cursor: 'pointer' }}></i>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

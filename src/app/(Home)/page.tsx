@@ -65,7 +65,7 @@ export default function Home() {
 
 const FeatureCard = ({ title, description, color, img, altImg }: { title: string, description: string, color: string, img: any, altImg: string }) => (
   <div className='col-md-4 mb-3'>
-    <div className='d-flex p-4 text-dark gap-3' style={{ border: `5px solid ${color}`, borderRadius: '8px', height: '200px' }}>
+    <div className='d-flex p-4 text-dark gap-3' style={{ border: `5px solid ${color}`, borderRadius: '8px' }}>
       <Image
         src={img}
         alt={altImg}

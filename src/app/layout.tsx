@@ -5,13 +5,16 @@ import BootstrapInitializer from './components/BootstrapInitializer'
 import Footer from './components/Footer'
 
 export const metadata = {
-  title: 'Home Page',
-  description: 'Template Home Page with Bootstrap',
+  title: 'HLS | Hackathon Learning Space',
+  description: 'digital learning space for hackathons'
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='icon' href='/hackathon_learning_space_logo.png' type='image/png' />
+      </head>
       <body className='bg-light text-dark'>
         <BootstrapInitializer />
         <Navbar />

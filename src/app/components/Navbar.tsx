@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import Logo from '@/../public/hackathon_learning_space_logo.png'
 import ProfileUser from '@/../public/Profil-removebg-preview 1.png'
 
 const links = [
@@ -44,12 +43,13 @@ const Navbar = () => {
               {/* Logo */}
               <Link href='/' className='navbar-brand d-flex align-items-center gap-2 text-white'>
                 <Image
-                  src={Logo}
+                  src='/assets/images/hackathon_learning_space_logo.png'
                   alt='Hackathon Logo'
-                  width={100}
+                  width={50}
                   height={50}
                   quality={100}
                 />
+                <span className='d-none d-md-inline'>Hackathon Learning Space</span>
               </Link>
 
               {/* Toggler for mobile */}

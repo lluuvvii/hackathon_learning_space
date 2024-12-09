@@ -6,15 +6,15 @@ import Footer from './components/Footer'
 
 export const metadata = {
   title: 'HLS | Hackathon Learning Space',
-  description: 'digital learning space for hackathons'
+  description: 'digital learning space for hackathons',
+  icons: {
+    icon: '/assets/images/hackathon_learning_space_logo.ico',
+  }
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
-      <head>
-        <link rel='icon' href='/hackathon_learning_space_logo.png' type='image/png' />
-      </head>
       <body className='bg-light text-dark'>
         <BootstrapInitializer />
         <Navbar />

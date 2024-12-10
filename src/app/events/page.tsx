@@ -8,44 +8,35 @@ const EventPage = () => {
       {/* Banner */}
       <div
         style={{
-          width: '100%',
-          height: '300px',
           position: 'relative',
+          width: '100%',
+          height: '400px',
+          overflow: 'hidden'
         }}
       >
         <Image
-          src='/path-to-banner-image.jpg' // Update path sesuai file gambar
+          src='/img/events/events_background.png'
           alt='Event Banner'
           layout='fill'
           objectFit='cover'
+          quality={100}
         />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '10%',
-            left: '10%',
-            color: 'white',
-            textShadow: '1px 1px 5px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-          <h1>Ikuti Event Menantang dari Hackathon Learning Space</h1>
-        </div>
+      </div>
+
+      <div className='container d-flex justify-content-center mt-5'>
+        <h1 className='fw-bold' style={{ fontSize: '2rem' }}>
+          Ikuti Event Menantang dari <span style={{ color: '#00A693' }}>Hackathon Learning Space</span>
+        </h1>
       </div>
 
       {/* Buttons */}
-      <div
-        className='container my-4 text-center'
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '10px',
-        }}
-      >
-        <button className='btn btn-outline-teal'>Event Saya</button>
-        <button className='btn btn-outline-teal'>Rekomendasi Event</button>
-        <button className='btn btn-outline-teal'>Event Sedang Berlangsung</button>
-        <button className='btn btn-outline-teal'>Event Akan Datang</button>
+      <div className='container mb-4 d-flex justify-content-center flex-wrap gap-4'>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Event Saya</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Rekomendasi Event</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Event Berlangsung</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Event Akan Datang</button>
       </div>
+
 
       {/* Event Sections */}
       <main className='container mt-5'>

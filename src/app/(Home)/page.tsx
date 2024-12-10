@@ -2,9 +2,9 @@
 
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import DashboardCardImg from '@/../public/img/featured_card_home/Rectangle.png'
-import CommunityCardImg from '@/../public/img/featured_card_home/Rectangle1.png'
-import EventCardImg from '@/../public/img/featured_card_home/Rectangle2.png'
+import DashboardCardImg from '@/../public/img/home/Rectangle.png'
+import CommunityCardImg from '@/../public/img/home/Rectangle1.png'
+import EventCardImg from '@/../public/img/home/Rectangle2.png'
 import Image from 'next/image'
 
 export default function Home() {

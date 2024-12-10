@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import projectCardImg from '@/../public/img/project_card_projects/Rectangle_198.png'
+import projectCardImg from '@/../public/img/projects/Rectangle_198.png'
 import { FaBookmark } from 'react-icons/fa'
 
 interface ProjectCardProps {

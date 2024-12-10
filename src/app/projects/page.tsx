@@ -19,8 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
     <div
       className='card h-100'
       style={{
-        border: '1px solid #00897B',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        border: '2px solid #00897B',
       }}
     >
       {/* Header */}
@@ -164,7 +163,7 @@ const ProjectsPage = () => {
             <div
               className='p-4'
               style={{
-                border: '1px solid #00897B',
+                border: '2px solid #00897B',
                 borderRadius: '10px',
                 backgroundColor: '#F9F9F9',
               }}
@@ -197,7 +196,7 @@ const ProjectsPage = () => {
                   <div
                     className='p-4'
                     style={{
-                      border: '1px solid #00897B',
+                      border: '2px solid #00897B',
                       borderRadius: '10px',
                       backgroundColor: '#F9F9F9',
                     }}
@@ -238,9 +237,8 @@ const ProjectsPage = () => {
             <div
               className='text-start p-4'
               style={{
-                border: '1px solid #00897B',
+                border: '2px solid #00897B',
                 borderRadius: '10px',
-                backgroundColor: '#F9F9F9',
               }}
             >
               <ul className='mb-0'>

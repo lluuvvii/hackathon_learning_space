@@ -12,7 +12,7 @@ interface EventCardProps {
 const EventCard = ({ title, description, date, imageSrc }: EventCardProps) => {
   return (
     <div
-      className="card h-100 p-3"
+      className='card h-100 p-3'
       style={{
         width: 320,
         border: '2px solid #00897B',
@@ -24,21 +24,21 @@ const EventCard = ({ title, description, date, imageSrc }: EventCardProps) => {
         alt={title}
         width={320}
         height={200}
-        className="card-img"
+        className='card-img'
       />
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
+      <div className='card-body'>
+        <h5 className='card-title'>{title}</h5>
         <p>{description}</p>
         <p>{date}</p>
-        <div className="d-flex justify-content-end">
-          <button className="btn btn-success">
+        <div className='d-flex justify-content-end'>
+          <button className='btn btn-success'>
             <IoIosArrowForward size={20} />
           </button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const EventPage = () => {
   const myEvents = [
@@ -54,7 +54,7 @@ const EventPage = () => {
       date: '01 Februari - 30 Februari 2024',
       imageSrc: '/img/events/banner_my_event2.png',
     },
-  ];
+  ]
 
   const recommendedEvents = [
     {
@@ -81,7 +81,7 @@ const EventPage = () => {
       date: '15 Januari - 15 Maret 2024',
       imageSrc: '/img/events/banner_my_event3.png',
     },
-  ];
+  ]
 
   const ongoingEvents = [
     {
@@ -108,7 +108,7 @@ const EventPage = () => {
       date: '15 Januari - 15 Maret 2024',
       imageSrc: '/img/events/banner_my_event3.png',
     },
-  ];
+  ]
 
   const upcomingEvents = [
     {
@@ -135,7 +135,7 @@ const EventPage = () => {
       date: '15 Januari - 15 Maret 2024',
       imageSrc: '/img/events/banner_my_event3.png',
     },
-  ];
+  ]
   return (
     <div style={{ fontFamily: 'Arial, sans-serif' }}>
       {/* Banner */}
@@ -177,7 +177,7 @@ const EventPage = () => {
         <section className='mb-5'>
           <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Event Saya</h3>
           <div
-            className="d-flex gap-3 justify-content-center"
+            className='d-flex gap-3 justify-content-center'
             style={{
               overflowX: 'auto',
               padding: '0 10px',
@@ -202,7 +202,7 @@ const EventPage = () => {
         <section className='mb-5'>
           <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Rekomendasi Event</h3>
           <div
-            className="d-flex gap-3 justify-content-center"
+            className='d-flex gap-3 justify-content-center'
             style={{
               overflowX: 'auto',
               padding: '0 10px',
@@ -227,7 +227,7 @@ const EventPage = () => {
         <section className='mb-5'>
           <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Event yang sedang berlangsung</h3>
           <div
-            className="d-flex gap-3 justify-content-center"
+            className='d-flex gap-3 justify-content-center'
             style={{
               overflowX: 'auto',
               padding: '0 10px',
@@ -252,7 +252,7 @@ const EventPage = () => {
         <section className='mb-5'>
           <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Event yang akan datang</h3>
           <div
-            className="d-flex gap-3 justify-content-center"
+            className='d-flex gap-3 justify-content-center'
             style={{
               overflowX: 'auto',
               padding: '0 10px',

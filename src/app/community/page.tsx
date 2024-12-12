@@ -11,13 +11,12 @@ export default function Komunitas() {
       {/* Welcome Section */}
       <section
         style={{
-          backgroundColor: '#F7F9FC',
+          backgroundColor: 'white',
           border: '3px solid #00897B',
           borderRadius: '15px',
           margin: '20px auto',
           padding: '20px',
           maxWidth: '800px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
         }}
       >
         <h1
@@ -66,12 +65,13 @@ export default function Komunitas() {
               fontWeight: 'bold',
             }}
           >
-            <i className="bi bi-plus-circle"></i>
+            <i className='bi bi-plus-circle'></i>
             Buat Ruang
           </button>
 
           {/* Input Cari */}
           <div
+            className='input-group'
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -82,17 +82,8 @@ export default function Komunitas() {
               maxWidth: '200px',
             }}
           >
-            <i className="bi bi-search" style={{ color: '#00897B', marginRight: '5px' }}></i>
-            <input
-              type="text"
-              placeholder="Cari"
-              style={{
-                border: 'none',
-                outline: 'none',
-                flex: 1,
-                fontSize: '1rem',
-              }}
-            />
+            <i className='bi bi-search' style={{ color: '#00897B', marginRight: '5px' }} />
+            <input type='text' className='form-control' placeholder='Cari' />
           </div>
 
           {/* Button Filter */}
@@ -109,7 +100,7 @@ export default function Komunitas() {
               cursor: 'pointer',
             }}
           >
-            <i className="bi bi-filter"></i>
+            <i className='bi bi-filter'></i>
           </button>
         </div>
       </section>

@@ -11,54 +11,105 @@ export default function Komunitas() {
       {/* Welcome Section */}
       <section
         style={{
-          backgroundColor: '#ffffff',
-          border: '2px solid #007c70',
-          borderRadius: '10px',
+          backgroundColor: '#F7F9FC',
+          border: '3px solid #00897B',
+          borderRadius: '15px',
           margin: '20px auto',
           padding: '20px',
-          maxWidth: '1000px',
-          textAlign: 'center',
+          maxWidth: '800px',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h1 className='text-dark'>Selamat Datang di Forum Diskusi!!</h1>
-        <p className='text-dark'>Ikuti Ruang untuk menjelajahi informasi mengenai hackathon.</p>
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '15px' }}>
+        <h1
+          style={{
+            color: '#00897B',
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '10px',
+          }}
+        >
+          Selamat Datang di Forum Diskusi!!
+        </h1>
+        <p
+          style={{
+            color: '#333',
+            textAlign: 'center',
+            fontSize: '1rem',
+            marginBottom: '20px',
+          }}
+        >
+          Ikuti Ruang untuk menjelajahi informasi mengenai hackathon.
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            gap: '15px',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {/* Button Buat Ruang */}
           <button
             onClick={() => router.push('/community/create')}
             style={{
-              backgroundColor: '#007c70',
-              color: '#ffffff',
-              border: 'none',
-              borderRadius: '5px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: 'white',
+              color: '#00897B',
+              border: '2px solid #00897B',
+              borderRadius: '10px',
               padding: '10px 20px',
               cursor: 'pointer',
+              fontWeight: 'bold',
             }}
           >
-            + Buat Ruang
+            <i className="bi bi-plus-circle"></i>
+            Buat Ruang
           </button>
-          <input
-            type='text'
-            placeholder='Cari'
+
+          {/* Input Cari */}
+          <div
             style={{
-              padding: '10px',
-              border: '1px solid #ccc',
-              borderRadius: '5px',
-              flex: '1',
+              display: 'flex',
+              alignItems: 'center',
+              border: '2px solid #00897B',
+              borderRadius: '10px',
+              padding: '5px 10px',
+              backgroundColor: 'white',
               maxWidth: '200px',
-              backgroundColor: 'white'
             }}
-          />
+          >
+            <i className="bi bi-search" style={{ color: '#00897B', marginRight: '5px' }}></i>
+            <input
+              type="text"
+              placeholder="Cari"
+              style={{
+                border: 'none',
+                outline: 'none',
+                flex: 1,
+                fontSize: '1rem',
+              }}
+            />
+          </div>
+
+          {/* Button Filter */}
           <button
             style={{
-              backgroundColor: '#ffffff',
-              color: '#007c70',
-              border: '2px solid #007c70',
-              borderRadius: '5px',
-              padding: '10px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'white',
+              color: '#00897B',
+              border: '2px solid #00897B',
+              borderRadius: '10px',
+              padding: '10px 15px',
               cursor: 'pointer',
             }}
           >
-            <i className='bi bi-filter'></i>
+            <i className="bi bi-filter"></i>
           </button>
         </div>
       </section>

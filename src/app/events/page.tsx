@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
 
@@ -43,6 +42,75 @@ const EventCard = ({ title, description, date, imageSrc }: EventCardProps) => {
 
 const EventPage = () => {
   const myEvents = [
+    {
+      title: 'Solve For Society',
+      description: 'Kompetisi teknologi berdampak sosial',
+      date: '01 Desember - 30 Desember 2024',
+      imageSrc: '/img/events/banner_my_event1.png',
+    },
+    {
+      title: 'Coding Challenge: Build & Code',
+      description: 'Kompetisi keterampilan coding',
+      date: '01 Februari - 30 Februari 2024',
+      imageSrc: '/img/events/banner_my_event2.png',
+    },
+  ];
+
+  const recommendedEvents = [
+    {
+      title: 'Solve For Society',
+      description: 'Kompetisi teknologi berdampak sosial',
+      date: '01 Desember - 30 Desember 2024',
+      imageSrc: '/img/events/banner_my_event1.png',
+    },
+    {
+      title: 'Coding Challenge: Build & Code',
+      description: 'Kompetisi keterampilan coding',
+      date: '01 Februari - 30 Februari 2024',
+      imageSrc: '/img/events/banner_my_event2.png',
+    },
+    {
+      title: 'Hackathon 2024',
+      description: 'Kompetisi pengembangan aplikasi',
+      date: '15 Januari - 15 Maret 2024',
+      imageSrc: '/img/events/banner_my_event3.png',
+    },
+    {
+      title: 'Hackathon 2024',
+      description: 'Kompetisi pengembangan aplikasi',
+      date: '15 Januari - 15 Maret 2024',
+      imageSrc: '/img/events/banner_my_event3.png',
+    },
+  ];
+
+  const ongoingEvents = [
+    {
+      title: 'Solve For Society',
+      description: 'Kompetisi teknologi berdampak sosial',
+      date: '01 Desember - 30 Desember 2024',
+      imageSrc: '/img/events/banner_my_event1.png',
+    },
+    {
+      title: 'Coding Challenge: Build & Code',
+      description: 'Kompetisi keterampilan coding',
+      date: '01 Februari - 30 Februari 2024',
+      imageSrc: '/img/events/banner_my_event2.png',
+    },
+    {
+      title: 'Hackathon 2024',
+      description: 'Kompetisi pengembangan aplikasi',
+      date: '15 Januari - 15 Maret 2024',
+      imageSrc: '/img/events/banner_my_event3.png',
+    },
+    {
+      title: 'Hackathon 2024',
+      description: 'Kompetisi pengembangan aplikasi',
+      date: '15 Januari - 15 Maret 2024',
+      imageSrc: '/img/events/banner_my_event3.png',
+    },
+  ];
+
+  const upcomingEvents = [
     {
       title: 'Solve For Society',
       description: 'Kompetisi teknologi berdampak sosial',
@@ -109,7 +177,7 @@ const EventPage = () => {
         <section className='mb-5'>
           <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Event Saya</h3>
           <div
-            className="d-flex gap-3"
+            className="d-flex gap-3 justify-content-center"
             style={{
               overflowX: 'auto',
               padding: '0 10px',
@@ -130,44 +198,78 @@ const EventPage = () => {
           </div>
         </section>
 
-        {/* Event Akan Datang */}
-        <section className='mb-5' >
-          <h3 style={{ color: '#00897B', fontWeight: 'bold' }}>Event Akan Datang</h3>
-          <div className='row'>
-            <div className='col-md-6 mb-4'>
-              <div
-                className='card h-100'
-                style={{
-                  border: '1px solid #00897B',
-                  borderRadius: '10px',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                }}
-              >
-                <Image
-                  src='/path-to-image-2.jpg'
-                  alt='Tech Startup Pitch'
-                  width={500}
-                  height={300}
-                  className='card-img-top'
+        {/* Rekomendasi Event */}
+        <section className='mb-5'>
+          <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Rekomendasi Event</h3>
+          <div
+            className="d-flex gap-3 justify-content-center"
+            style={{
+              overflowX: 'auto',
+              padding: '0 10px',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            {recommendedEvents.map((event, index) => (
+              <div key={index} style={{ display: 'inline-block' }}>
+                <EventCard
+                  title={event.title}
+                  description={event.description}
+                  date={event.date}
+                  imageSrc={event.imageSrc}
                 />
-                <div className='card-body'>
-                  <h5 className='card-title'>Tech Startup Pitch</h5>
-                  <p>Kompetisi Teknologi Bisnis</p>
-                  <p>16 Februari - 28 Februari 2025</p>
-                  <Link
-                    href='/event/tech-startup-pitch'
-                    className='btn'
-                    style={{
-                      backgroundColor: '#00897B',
-                      color: 'white',
-                      borderRadius: '5px',
-                    }}
-                  >
-                    Informasi Pendaftaran
-                  </Link>
-                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Event yang sedang berlangsung */}
+        <section className='mb-5'>
+          <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Event yang sedang berlangsung</h3>
+          <div
+            className="d-flex gap-3 justify-content-center"
+            style={{
+              overflowX: 'auto',
+              padding: '0 10px',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            {ongoingEvents.map((event, index) => (
+              <div key={index} style={{ display: 'inline-block' }}>
+                <EventCard
+                  title={event.title}
+                  description={event.description}
+                  date={event.date}
+                  imageSrc={event.imageSrc}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Event yang akan datang */}
+        <section className='mb-5'>
+          <h3 className='text-center' style={{ color: '#00897B', fontWeight: 'bold' }}>Event yang akan datang</h3>
+          <div
+            className="d-flex gap-3 justify-content-center"
+            style={{
+              overflowX: 'auto',
+              padding: '0 10px',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
+            {upcomingEvents.map((event, index) => (
+              <div key={index} style={{ display: 'inline-block' }}>
+                <EventCard
+                  title={event.title}
+                  description={event.description}
+                  date={event.date}
+                  imageSrc={event.imageSrc}
+                />
+              </div>
+            ))}
           </div>
         </section>
       </main>

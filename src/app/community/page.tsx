@@ -1,11 +1,83 @@
 'use client'
 
 import Image from 'next/image'
+import projectCardImg from '@/../public/img/projects/Rectangle_198.png'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { IoIosArrowForward } from 'react-icons/io'
+
+interface ProjectCardProps {
+  title: string
+  description: string
+  imageSrc: any
+  altText: string
+  onStart: () => void
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, altText, onStart }) => {
+  return (
+    <div
+      className='card h-100'
+      style={{
+        border: '2px solid #00897B',
+      }}
+    >
+      {/* Header */}
+      <div className='card-header text-center' style={{ backgroundColor: '#E0F2F1' }}>
+        <h5 className='fw-bold' style={{ color: '#00897B' }}>
+          {title}
+        </h5>
+      </div>
+
+      {/* Gambar */}
+      <div style={{ width: '100%', height: '200px', position: 'relative' }}>
+        <Image
+          src={imageSrc}
+          alt={altText}
+          layout='fill'
+          objectFit='cover'
+          priority
+        />
+      </div>
+
+      {/* Konten */}
+      <div className='card-body text-center'>
+        <p className='card-text'>{description}</p>
+        <div className='d-flex justify-content-end'>
+          <button className='btn btn-success'>
+            <IoIosArrowForward size={20} />
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Komunitas() {
   const router = useRouter()
+  const handleStart = (title: string) => {
+    alert(`Mulai proyek: ${title}`)
+  }
+  const projects = [
+    {
+      title: 'Product Manager',
+      description: ' Kolaborasi, perencanaan, dan pengambilan keputusan terkait pengembangan produk atau pengelolaan proyek.',
+      imageSrc: projectCardImg,
+      altText: 'UI Design Illustration',
+    },
+    {
+      title: 'UI/UX',
+      description: 'kolaborasi dalam pertukaran ide dalam proses desain antarmuka pengguna (UI) dan pengalaman pengguna (UX). ',
+      imageSrc: projectCardImg,
+      altText: 'Backend Illustration',
+    },
+    {
+      title: 'Developer',
+      description: 'Berfokus pada aspek teknis dari pengembangan, seperti implementasi fitur, arsitektur sistem, integrasi, dan debugging.',
+      imageSrc: projectCardImg,
+      altText: 'Frontend Illustration',
+    },
+  ]
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column', marginTop: '100px' }}>
       {/* Welcome Section */}
@@ -105,52 +177,28 @@ export default function Komunitas() {
         </div>
       </section>
 
+      <div className='container d-flex justify-content-center mt-5'>
+        <h1 className='fw-bold' style={{ color: '#00798B' }}>
+          Temukan Ruang Diskusi
+        </h1>
+      </div>
+
       {/* Discussion Cards */}
-      <section style={{ padding: '20px' }}>
-        <h2 style={{ textAlign: 'center', color: '#007c70', marginBottom: '20px' }}>Temukan Ruang Diskusi</h2>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '20px',
-            justifyContent: 'center',
-          }}
-        >
-          {[
-            { title: 'Product Manager', description: 'Kolaborasi, perencanaan, dan pengambilan keputusan terkait pengembangan produk atau pengelolaan proyek.', image: '/product.png' },
-            { title: 'UI/UX', description: 'Kolaborasi dalam pertukaran ide dalam proses desain antarmuka pengguna (UI) dan pengalaman pengguna (UX).', image: '/uiux.png' },
-            { title: 'Developer', description: 'Berfokus pada aspek teknis dari pengembangan, seperti implementasi fitur, arsitektur sistem, integrasi, dan debugging.', image: '/developer.png' },
-          ].map((room, index) => (
-            <div
-              key={index}
-              style={{
-                flex: '1 1 calc(33% - 20px)',
-                backgroundColor: '#007c70',
-                color: '#ffffff',
-                borderRadius: '10px',
-                textAlign: 'center',
-                padding: '15px',
-                maxWidth: '300px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              }}
-            >
-              <Image
-                src={room.image}
-                alt={room.title}
-                width={300}
-                height={150}
-                style={{
-                  objectFit: 'cover',
-                  borderRadius: '10px 10px 0 0',
-                  marginBottom: '10px',
-                }}
+      <div className='container mt-5'>
+        <div className='row mb-5'>
+          {projects.map((project, index) => (
+            <div className='col-md-4 mb-4' key={index}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imageSrc={project.imageSrc}
+                altText={project.altText}
+                onStart={() => handleStart(project.title)}
               />
-              <h3>{room.title}</h3>
-              <p style={{ fontSize: '0.9rem' }}>{room.description}</p>
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </div >
   )
 }

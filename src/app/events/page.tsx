@@ -158,7 +158,7 @@ const EventPage = () => {
 
       <div className='container d-flex justify-content-center mt-5'>
         <h1 className='fw-bold' style={{ fontSize: '2rem' }}>
-          Ikuti Event Menantang dari <span style={{ color: '#00A693' }}>Hackathon Learning Space</span>
+          Ikuti Event Menantang dari <span style={{ color: '#00798B' }}>Hackathon Learning Space</span>
         </h1>
       </div>
 

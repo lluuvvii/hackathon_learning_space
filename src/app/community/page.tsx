@@ -54,9 +54,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
 
 export default function Komunitas() {
   const router = useRouter()
-  const handleStart = (title: string) => {
-    alert(`Mulai proyek: ${title}`)
-  }
   const projects = [
     {
       title: 'Product Manager',

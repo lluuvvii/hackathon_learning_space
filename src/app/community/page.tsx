@@ -11,10 +11,9 @@ interface ProjectCardProps {
   description: string
   imageSrc: any
   altText: string
-  onStart: () => void
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, altText, onStart }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, altText }) => {
   return (
     <div
       className='card h-100'
@@ -193,7 +192,6 @@ export default function Komunitas() {
                 description={project.description}
                 imageSrc={project.imageSrc}
                 altText={project.altText}
-                onStart={() => handleStart(project.title)}
               />
             </div>
           ))}

@@ -3,6 +3,7 @@
 import React from 'react'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
+import Image from 'next/image'
 
 export default function Dashboard() {
   return (
@@ -92,19 +93,42 @@ export default function Dashboard() {
                 borderRadius: '10px',
               }}
             >
-              <h5>Traffic by Location</h5>
+              <h5>
+                <i
+                  className="bi bi-geo-alt-fill"
+                  style={{ color: '#007c70', marginRight: '10px' }}
+                ></i>
+                Traffic by Location
+              </h5>
               <div
                 style={{
+                  position: 'relative',
                   height: '150px',
-                  backgroundColor: '#e9ecef',
                   borderRadius: '10px',
                   marginTop: '10px',
+                  overflow: 'hidden',
                 }}
-              ></div>
+              >
+                <Image
+                  src="/img/about/about.png"
+                  alt="Traffic Map"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
               <ul style={{ marginTop: '10px', paddingLeft: '20px' }}>
-                <li>Progres Belajar: 50%</li>
-                <li>Tantangan: 30%</li>
-                <li>Laporan selesai: 20%</li>
+                <li>
+                  <i className="bi bi-check-circle-fill" style={{ color: '#007c70', marginRight: '5px' }}></i>
+                  Progres Belajar: 50%
+                </li>
+                <li>
+                  <i className="bi bi-check-circle-fill" style={{ color: '#007c70', marginRight: '5px' }}></i>
+                  Tantangan: 30%
+                </li>
+                <li>
+                  <i className="bi bi-check-circle-fill" style={{ color: '#007c70', marginRight: '5px' }}></i>
+                  Laporan selesai: 20%
+                </li>
               </ul>
             </div>
 

@@ -11,7 +11,7 @@ export default function Dashboard() {
       {/* Sidebar */}
       <Sidebar />
       {/* Main Content */}
-      <div style={{ flex: '1', backgroundColor: '#f8f9fa' }}>
+      <div style={{ flex: '1', backgroundColor: '#eaf4f4' }}>
         {/* Navbar */}
         <Navbar />
         {/* Dashboard Content */}

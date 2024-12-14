@@ -2,14 +2,17 @@
 
 import React from 'react'
 import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar'
 
 export default function Dashboard() {
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'Arial, sans-serif', marginTop: '65px' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'Arial, sans-serif', marginTop: '75px' }}>
       {/* Sidebar */}
       <Sidebar />
       {/* Main Content */}
-      <div style={{ flex: '1', backgroundColor: '#f8f9fa', overflowX: 'hidden' }}>
+      <div style={{ flex: '1', backgroundColor: '#f8f9fa' }}>
+        {/* Navbar */}
+        <Navbar />
         {/* Dashboard Content */}
         <main style={{ padding: '20px' }}>
           {/* Progress Statistics */}

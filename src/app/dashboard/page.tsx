@@ -1,68 +1,13 @@
 'use client'
 
-import Image from 'next/image'
 import React from 'react'
+import Sidebar from './components/Sidebar'
 
 export default function Dashboard() {
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'Arial, sans-serif', marginTop: '65px' }}>
       {/* Sidebar */}
-      <aside
-        style={{
-          width: '250px',
-          backgroundColor: '#006d5b',
-          color: '#ffffff',
-          padding: '20px 10px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px',
-        }}
-      >
-        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-          <Image
-            src='/logo.png'
-            alt='Logo'
-            width={100}
-            height={100}
-            style={{ marginBottom: '10px' }}
-          />
-        </div>
-        <nav>
-          <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
-            {[
-              { icon: 'bi bi-grid', label: 'Dashboard' },
-              { icon: 'bi bi-folder', label: 'Proyek yang sedang berjalan' },
-              { icon: 'bi bi-flag', label: 'Tantangan' },
-              { icon: 'bi bi-award', label: 'Sertifikasi & Badges' },
-              { icon: 'bi bi-file-earmark', label: 'Laporan' },
-              { icon: 'bi bi-gear', label: 'Setting' },
-            ].map((item, index) => (
-              <li
-                key={index}
-                style={{
-                  padding: '10px 15px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  cursor: 'pointer',
-                  borderRadius: '5px',
-                  transition: 'background-color 0.3s ease',
-                }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.backgroundColor = '#007c70')
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.backgroundColor = '#006d5b')
-                }
-              >
-                <i className={item.icon}></i>
-                <span>{item.label}</span>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </aside>
-
+      <Sidebar />
       {/* Main Content */}
       <div style={{ flex: '1', backgroundColor: '#f8f9fa', overflowX: 'hidden' }}>
         {/* Dashboard Content */}

@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import MemberModal from './MemberModal';
 import Sidebar from '../../components/Sidebar';
-import { useRouter } from 'next/navigation';
 
 interface Member {
   id: number;
@@ -12,12 +11,28 @@ interface Member {
   role: string;
 }
 
+interface Message {
+  id: number;
+  sender: string;
+  content: string;
+  time: string;
+}
+
 const MemberPage = () => {
-  const router = useRouter()
   const [members, setMembers] = useState<Member[]>([
     { id: 1, name: 'luviluvi', email: 'luviluvi@gmail.com', role: 'Front End' },
   ]);
 
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 1,
+      sender: 'luviluvi',
+      content: 'Halo tim, apa kabar semua?',
+      time: '10:00 AM',
+    },
+  ]);
+  const [showChatModal, setShowChatModal] = useState(false);
+  const [newMessage, setNewMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
 
   const handleAddMember = (name: string, email: string, role: string) => {
@@ -38,6 +53,19 @@ const MemberPage = () => {
     const inviteLink = `${window.location.origin}/invite-link`;
     navigator.clipboard.writeText(inviteLink);
     alert('Tautan undangan berhasil disalin!');
+  };
+
+  const handleSendMessage = () => {
+    if (!newMessage.trim()) return;
+
+    const newMsg: Message = {
+      id: Date.now(),
+      sender: 'luviluvi', // Default sender, bisa diubah sesuai user login
+      content: newMessage,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    };
+    setMessages([...messages, newMsg]);
+    setNewMessage('');
   };
 
   return (
@@ -62,7 +90,7 @@ const MemberPage = () => {
               <button className="btn btn-outline-secondary" style={{ marginRight: 10 }} onClick={handleCopyLink}>
                 Salin Link
               </button>
-              <button className="btn btn-dark" style={{ backgroundColor: '#00897B' }} onClick={() => router.push('/dashboard/projects/1/chats')}>
+              <button className="btn btn-dark" style={{ backgroundColor: '#00897B' }} onClick={() => setShowChatModal(true)}>
                 Chat Diskusi
               </button>
             </div>
@@ -103,6 +131,58 @@ const MemberPage = () => {
             onClose={() => setShowModal(false)}
             onAdd={handleAddMember}
           />
+        )}
+
+        {/* Modal Chat Diskusi */}
+        {showChatModal && (
+          <div className="modal d-block" tabIndex={-1}>
+            <div className="modal-dialog modal-lg">
+              <div className="modal-content" style={{ height: '500px', display: 'flex', flexDirection: 'column' }}>
+                {/* Header */}
+                <div className="modal-header">
+                  <h5 className="modal-title">Chat Diskusi</h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    onClick={() => setShowChatModal(false)}
+                  ></button>
+                </div>
+
+                {/* Body dengan Scrollable Chat */}
+                <div className="modal-body" style={{ flex: '1', overflowY: 'auto' }}>
+                  <ul className="list-group mb-3">
+                    {messages.map((message) => (
+                      <li key={message.id} className="list-group-item">
+                        <strong>{message.sender}</strong>{' '}
+                        <span className="text-muted">({message.time})</span>
+                        <p className="mb-0">{message.content}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Footer tetap di bawah */}
+                <div className="modal-footer" style={{ backgroundColor: '#f8f9fa', borderTop: '1px solid #ddd' }}>
+                  <div className="input-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Ketik pesan..."
+                      value={newMessage}
+                      onChange={(e) => setNewMessage(e.target.value)}
+                    />
+                    <button
+                      className="btn btn-dark"
+                      style={{ backgroundColor: '#00897B' }}
+                      onClick={handleSendMessage}
+                    >
+                      Kirim
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>

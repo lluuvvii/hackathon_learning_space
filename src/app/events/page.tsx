@@ -158,16 +158,16 @@ const EventPage = () => {
 
       <div className='container d-flex justify-content-center mt-5'>
         <h1 className='fw-bold' style={{ fontSize: '2rem' }}>
-          Ikuti Event Menantang dari <span style={{ color: '#00798B' }}>Hackathon Learning Space</span>
+          Ikuti Event Menantang dari <span style={{ color: '#00897B' }}>Hackathon Learning Space</span>
         </h1>
       </div>
 
       {/* Buttons */}
       <div className='container mb-4 d-flex justify-content-center flex-wrap gap-4'>
-        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Event Saya</button>
-        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Rekomendasi Event</button>
-        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Event Berlangsung</button>
-        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00798B' }}>Event Akan Datang</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00897B' }}>Event Saya</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00897B' }}>Rekomendasi Event</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00897B' }}>Event Berlangsung</button>
+        <button className='btn btn-outline-teal px-2' style={{ border: '1px solid #00897B' }}>Event Akan Datang</button>
       </div>
 
 

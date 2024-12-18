@@ -133,10 +133,9 @@ const ProjectsPage = () => {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', marginTop: '100px' }}>
       {/* Main Section */}
-      <main className='container mt-4'>
+      <main className='container'>
         {/* Project Cards */}
-
-        <div className='container mt-5'>
+        <div className='container'>
           <div className='row mb-5'>
             {projects.map((project, index) => (
               <div className='col-md-4 mb-4' key={index}>
@@ -152,59 +151,33 @@ const ProjectsPage = () => {
           </div>
         </div>
 
-        <section className='container my-5'>
-          {/* Purpose Section */}
-          <section className='mb-5 text-center'>
-            <h3 className='fw-bold mb-4' style={{ color: '#00897B' }}>
-              Tujuan
-            </h3>
-            <div
-              className='p-4'
-              style={{
-                border: '2px solid #00897B',
-                borderRadius: '10px',
-                backgroundColor: '#F9F9F9',
-              }}
-            >
-              <p className='text-dark mb-0' style={{ lineHeight: '1.8' }}>
-                Proyek ini dirancang untuk membantu mahasiswa mempelajari dan
-                mengembangkan keterampilan praktis dalam bidang teknologi, termasuk
-                desain antarmuka pengguna (UI), pengembangan backend yang efisien
-                dan aman, implementasi frontend yang responsif, serta strategi
-                digital marketing berbasis data. Melalui proyek ini, mahasiswa
-                diharapkan mampu memahami bagaimana mengintegrasikan teknologi dan
-                strategi pemasaran untuk menciptakan solusi yang efektif, menarik,
-                dan relevan di dunia digital.
-              </p>
-            </div>
-          </section>
-
-          {/* Skills Section */}
-          <section className='mb-5'>
-            <h3
-              className='fw-bold mb-4 text-center'
-              style={{ color: '#00897B' }}
-            >
-              Keterampilan yang Dibutuhkan
-            </h3>
-            <div className='row g-4'>
-              {/* Skill Item */}
-              {skills.map((skill, index) => (
-                <div className='col-sm-12' key={index}>
-                  <div
-                    className='p-4'
-                    style={{
-                      border: '2px solid #00897B',
-                      borderRadius: '10px',
-                      backgroundColor: '#F9F9F9',
-                    }}
+        <section className="mb-5">
+          <h3 className="fw-bold mb-4 text-center" style={{ color: '#00897B' }}>
+            Keterampilan yang Dibutuhkan
+          </h3>
+          <div className="accordion" id="skillsAccordion" style={{ border: '2px solid #00897B', borderRadius: '10px', overflow: 'hidden' }}>
+            {skills.map((skill, index) => (
+              <div className="accordion-item" key={index}>
+                <h2 className="accordion-header" id={`heading${index}`}>
+                  <button
+                    className={`accordion-button ${index === 0 ? '' : 'collapsed'} fw-bold`}
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#collapse${index}`}
+                    aria-expanded={index === 0 ? 'true' : 'false'}
+                    aria-controls={`collapse${index}`}
+                    style={{ color: '#00897B' }}
                   >
-                    <h5
-                      className='fw-bold mb-3'
-                      style={{ color: '#00897B', fontSize: '1.2rem' }}
-                    >
-                      {index + 1}. {skill.title}
-                    </h5>
+                    {index + 1}. {skill.title}
+                  </button>
+                </h2>
+                <div
+                  id={`collapse${index}`}
+                  className={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
+                  aria-labelledby={`heading${index}`}
+                  data-bs-parent="#skillsAccordion"
+                >
+                  <div className="accordion-body" style={{ backgroundColor: '#F9F9F9' }}>
                     <ul>
                       {skill.points.map((point, i) => (
                         <li key={i} style={{ lineHeight: '1.8' }}>
@@ -214,35 +187,60 @@ const ProjectsPage = () => {
                     </ul>
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
+              </div>
+            ))}
+          </div>
+        </section>
 
-          {/* Supporting Skills */}
-          <section className='text-center'>
-            <h3 className='fw-bold mb-4' style={{ color: '#00897B' }}>
-              Keterampilan Pendukung
-            </h3>
-            <div
-              className='text-start p-4'
-              style={{
-                border: '2px solid #00897B',
-                borderRadius: '10px',
-              }}
-            >
-              <ul className='mb-0'>
-                <li style={{ lineHeight: '1.8' }}>
-                  Kemampuan dasar berkomunikasi dan bekerja dalam tim.
-                </li>
-                <li style={{ lineHeight: '1.8' }}>
-                  Manajemen waktu untuk menyelesaikan tugas tepat waktu.
-                </li>
-                <li style={{ lineHeight: '1.8' }}>
-                  Rasa ingin tahu dan kemauan untuk belajar hal baru.
-                </li>
-              </ul>
+        {/* Keterampilan Pendukung */}
+        <section className="text-center mb-4">
+          <h3 className="fw-bold mb-4" style={{ color: '#00897B' }}>
+            Keterampilan Pendukung
+          </h3>
+          <div
+            className="accordion"
+            id="supportingSkillsAccordion"
+            style={{
+              border: '2px solid #00897B',
+              borderRadius: '10px',
+              overflow: 'hidden',
+            }}
+          >
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingSupporting">
+                <button
+                  className="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSupporting"
+                  aria-expanded="true"
+                  aria-controls="collapseSupporting"
+                  style={{ color: '#00897B', fontWeight: 'bold' }}
+                >
+                  Daftar Keterampilan Pendukung
+                </button>
+              </h2>
+              <div
+                id="collapseSupporting"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingSupporting"
+              >
+                <div className="accordion-body text-start">
+                  <ul className="mb-0">
+                    <li style={{ lineHeight: '1.8' }}>
+                      Kemampuan dasar berkomunikasi dan bekerja dalam tim.
+                    </li>
+                    <li style={{ lineHeight: '1.8' }}>
+                      Manajemen waktu untuk menyelesaikan tugas tepat waktu.
+                    </li>
+                    <li style={{ lineHeight: '1.8' }}>
+                      Rasa ingin tahu dan kemauan untuk belajar hal baru.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </section>
+          </div>
         </section>
       </main>
     </div>

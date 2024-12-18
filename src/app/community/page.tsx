@@ -174,7 +174,7 @@ export default function Komunitas() {
       </section>
 
       <div className='container d-flex justify-content-center mt-5'>
-        <h1 className='fw-bold' style={{ color: '#00798B' }}>
+        <h1 className='fw-bold' style={{ color: '#00897B' }}>
           Temukan Ruang Diskusi
         </h1>
       </div>

@@ -28,7 +28,7 @@ function page() {
                 >
                   <div
                     className='card-header text-white'
-                    style={{ backgroundColor: '#00798B', fontWeight: 'bold' }}
+                    style={{ backgroundColor: '#00897B', fontWeight: 'bold' }}
                   >
                     <i className='bi bi-flag-fill me-2'></i>
                     {challenge.title}
@@ -46,7 +46,7 @@ function page() {
                       <Link href='#' passHref>
                         <button
                           className='btn btn-success btn-sm'
-                          style={{ backgroundColor: '#00798B', borderColor: '#00798B' }}
+                          style={{ backgroundColor: '#00897B', borderColor: '#00897B' }}
                         >
                           <i className='bi bi-play-circle me-1'></i> Mulai
                         </button>
@@ -60,7 +60,7 @@ function page() {
 
           {/* Progress Tantangan */}
           <div className='mt-5'>
-            <h5 style={{ color: '#00798B', marginBottom: '15px' }}>Progress Tantangan</h5>
+            <h5 style={{ color: '#00897B', marginBottom: '15px' }}>Progress Tantangan</h5>
             <div
               className='card shadow-sm d-flex flex-row align-items-center p-3'
               style={{
@@ -74,7 +74,7 @@ function page() {
                 style={{
                   width: '50px',
                   height: '50px',
-                  backgroundColor: '#00798B',
+                  backgroundColor: '#00897B',
                   color: '#ffffff',
                   borderRadius: '50%',
                   marginRight: '15px',
@@ -83,7 +83,7 @@ function page() {
                 <i className='bi bi-bar-chart-fill fs-4'></i>
               </div>
               <div>
-                <p className='mb-1' style={{ fontWeight: 'bold', color: '#00798B' }}>
+                <p className='mb-1' style={{ fontWeight: 'bold', color: '#00897B' }}>
                   Progress Tantangan
                 </p>
                 <div className='progress' style={{ height: '10px', width: '300px' }}>
@@ -92,7 +92,7 @@ function page() {
                     role='progressbar'
                     style={{
                       width: `${progress}%`,
-                      backgroundColor: '#00798B',
+                      backgroundColor: '#00897B',
                     }}
                   ></div>
                 </div>

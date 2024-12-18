@@ -9,21 +9,22 @@ export default function ProjectDetail() {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', marginTop: '100px' }}>
       {/* Detail Proyek */}
-      <div className="container my-5">
-        <h3 className="fw-bold text-center" style={{ color: '#00798B' }}>Detail Proyek</h3>
+      <div className="container mb-4">
+        <h3 className="fw-bold text-center" style={{ color: '#00897B' }}>Detail Proyek</h3>
 
         {/* Accordion Bootstrap */}
-        <div className="accordion mt-4" id="projectAccordion">
+        <div className="accordion mt-4" id="projectAccordion" style={{ border: '2px solid #00897B', borderRadius: '10px', overflow: 'hidden' }}>
           {/* Penelitian dan Analisis */}
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
               <button
-                className="accordion-button"
+                className="accordion-button fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
                 aria-expanded="true"
                 aria-controls="collapseOne"
+                style={{ color: '#00897B' }}
               >
                 1. Penelitian dan Analisis
               </button>
@@ -51,12 +52,13 @@ export default function ProjectDetail() {
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingTwo">
               <button
-                className="accordion-button collapsed"
+                className="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"
                 aria-expanded="false"
                 aria-controls="collapseTwo"
+                style={{ color: '#00897B' }}
               >
                 2. Desain Visual
               </button>
@@ -81,12 +83,13 @@ export default function ProjectDetail() {
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingThree">
               <button
-                className="accordion-button collapsed"
+                className="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseThree"
                 aria-expanded="false"
                 aria-controls="collapseThree"
+                style={{ color: '#00897B' }}
               >
                 3. Prinsip Desain yang Digunakan
               </button>
@@ -112,12 +115,13 @@ export default function ProjectDetail() {
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingFour">
               <button
-                className="accordion-button collapsed"
+                className="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseFour"
                 aria-expanded="false"
                 aria-controls="collapseFour"
+                style={{ color: '#00897B' }}
               >
                 4. Fitur Utama yang Didesain
               </button>
@@ -143,12 +147,13 @@ export default function ProjectDetail() {
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingFive">
               <button
-                className="accordion-button collapsed"
+                className="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseFive"
                 aria-expanded="false"
                 aria-controls="collapseFive"
+                style={{ color: '#00897B' }}
               >
                 5. Testing dan Validasi
               </button>
@@ -170,11 +175,11 @@ export default function ProjectDetail() {
         </div>
 
         {/* Tombol Submit dan Kembali */}
-        <div className="text-center mt-4 d-flex justify-content-center gap-3">
+        <div className="text-center mt-4 d-flex justify-content-start gap-3">
           <button className="btn btn-light px-4 py-2" style={{ border: '1px solid gray' }} onClick={() => router.back()}>
             Kembali
           </button>
-          <button className="btn btn-dark px-4 py-2" style={{ backgroundColor: '#00798B' }}>Submit</button>
+          <button className="btn btn-dark px-4 py-2" style={{ backgroundColor: '#00897B' }}>Submit</button>
         </div>
       </div>
     </div>

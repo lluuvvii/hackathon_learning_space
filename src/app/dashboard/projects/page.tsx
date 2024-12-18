@@ -137,7 +137,7 @@ function page() {
 
           {/* Link Ke Halaman Lain */}
           <div className='mt-4'>
-            <Link href='/dashboard' className='fw-bold' style={{ textDecoration: 'none', color: '#00798B' }}>
+            <Link href='/dashboard' className='fw-bold' style={{ textDecoration: 'none', color: '#00897B' }}>
               Kembali ke Dashboard
             </Link>
           </div>

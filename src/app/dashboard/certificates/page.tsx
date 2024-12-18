@@ -22,7 +22,7 @@ function page() {
       <div style={{ flex: '1', backgroundColor: '#f8f9fa' }}>
         <Navbar />
         <div style={{ backgroundColor: '#eaf4f4', minHeight: '100vh', padding: '20px' }}>
-          <h3 className='fw-bold text-center' style={{ color: '#00798B', marginBottom: '20px' }}>Sertifikat</h3>
+          <h3 className='fw-bold text-center' style={{ color: '#00897B', marginBottom: '20px' }}>Sertifikat</h3>
 
           {/* Cards Sertifikat */}
           <div className='row g-3'>
@@ -35,7 +35,7 @@ function page() {
                   <div
                     className='card-header text-white'
                     style={{
-                      backgroundColor: '#00798B',
+                      backgroundColor: '#00897B',
                       fontWeight: 'bold',
                       display: 'flex',
                       alignItems: 'center',
@@ -49,8 +49,8 @@ function page() {
                       <button
                         className='btn btn-outline-secondary'
                         style={{
-                          color: '#00798B',
-                          borderColor: '#00798B',
+                          color: '#00897B',
+                          borderColor: '#00897B',
                           fontWeight: 'bold',
                         }}
                       >
@@ -65,7 +65,7 @@ function page() {
 
           {/* Badges */}
           <div className='mt-5'>
-            <h3 className='fw-bold text-center' style={{ color: '#00798B', marginBottom: '20px' }}>Badges</h3>
+            <h3 className='fw-bold text-center' style={{ color: '#00897B', marginBottom: '20px' }}>Badges</h3>
             <div className='row g-3'>
               {badges.map((badge) => (
                 <div key={badge.id} className='col-md-4'>
@@ -84,14 +84,14 @@ function page() {
                       style={{
                         width: '60px',
                         height: '60px',
-                        backgroundColor: '#00798B',
+                        backgroundColor: '#00897B',
                         color: '#ffffff',
                         borderRadius: '50%',
                       }}
                     >
                       <i className={`bi ${badge.icon} fs-3`}></i>
                     </div>
-                    <p style={{ fontWeight: 'bold', color: '#00798B' }}>{badge.title}</p>
+                    <p style={{ fontWeight: 'bold', color: '#00897B' }}>{badge.title}</p>
                   </div>
                 </div>
               ))}

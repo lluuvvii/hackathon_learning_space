@@ -8,25 +8,25 @@ function page() {
       title: "UI/UX",
       icon: "bi-geo-alt-fill", // Ganti dengan ikon yang sesuai
       progress: 60,
-      color: "#00798B",
+      color: "#00897B",
     },
     {
       title: "Frontend",
       icon: "bi-code-slash", // Ganti dengan ikon yang sesuai
       progress: 80,
-      color: "#00798B",
+      color: "#00897B",
     },
     {
       title: "Backend",
       icon: "bi-laptop", // Ganti dengan ikon yang sesuai
       progress: 40,
-      color: "#00798B",
+      color: "#00897B",
     },
     {
       title: "Digital Marketing",
       icon: "bi-bullhorn", // Ganti dengan ikon yang sesuai
       progress: 75,
-      color: "#00798B",
+      color: "#00897B",
     },
   ];
 
@@ -63,7 +63,7 @@ function page() {
                       ></div>
                     </div>
                     <p>Progress: {report.progress}%</p>
-                    <button className="btn w-100" style={{ backgroundColor: '#00798B', color: 'white' }}>Lengkapi Laporan</button>
+                    <button className="btn w-100" style={{ backgroundColor: '#00897B', color: 'white' }}>Lengkapi Laporan</button>
                   </div>
                 </div>
               </div>

@@ -192,7 +192,7 @@ const ProjectsPage = () => {
             <div className='row g-4'>
               {/* Skill Item */}
               {skills.map((skill, index) => (
-                <div className='col-md-6' key={index}>
+                <div className='col-sm-12' key={index}>
                   <div
                     className='p-4'
                     style={{
@@ -214,15 +214,6 @@ const ProjectsPage = () => {
                         </li>
                       ))}
                     </ul>
-                    <button
-                      className='btn text-light mt-3'
-                      style={{
-                        backgroundColor: '#00897B',
-                        borderRadius: '5px',
-                      }}
-                    >
-                      Pilih Proyek
-                    </button>
                   </div>
                 </div>
               ))}

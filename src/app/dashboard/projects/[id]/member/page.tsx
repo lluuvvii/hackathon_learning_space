@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import MemberModal from './MemberModal';
+import Sidebar from '../../components/Sidebar';
 
 interface Member {
   id: number;
@@ -39,6 +40,7 @@ const MemberPage = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'Arial, sans-serif', marginTop: '75px' }}>
+      <Sidebar />
       <div className="container mt-4">
         <div className="row">
           <div className="col-12">

@@ -70,7 +70,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
   )
 }
 
-
 const ProjectsPage = () => {
   const router = useRouter()
   const projects = [

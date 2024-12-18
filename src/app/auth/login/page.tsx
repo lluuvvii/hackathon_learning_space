@@ -1,11 +1,13 @@
 'use client'
 
+import { useRouter } from "next/navigation";
 import AuthForm from "../components/AuthForm";
 
 export default function SignInPage() {
+  const router = useRouter()
   const handleSignIn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Sign In form submitted!");
+    router.push('/')
   };
 
   return <AuthForm title="Masuk" buttonText="Masuk" onSubmit={handleSignIn} />;

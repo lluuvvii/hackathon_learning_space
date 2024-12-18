@@ -63,7 +63,7 @@ export default function Komunitas() {
     {
       title: 'UI/UX',
       description: 'kolaborasi dalam pertukaran ide dalam proses desain antarmuka pengguna (UI) dan pengalaman pengguna (UX). ',
-      imageSrc: '/img/projects/bg%20UIUX1.jpg',
+      imageSrc: '/img/projects/BG%20UIUX1.jpg',
       altText: 'Backend Illustration',
     },
     {

@@ -76,7 +76,7 @@ const ProjectsPage = () => {
     {
       title: 'UI Design: VisioFlow',
       description: 'Desain antarmuka modern yang intuitif untuk meningkatkan pengalaman pengguna.',
-      imageSrc: '/img/projects/bg%20UIUX1.jpg',
+      imageSrc: '/img/projects/BG%20UIUX1.jpg',
       altText: 'UI Design Illustration',
     },
     {

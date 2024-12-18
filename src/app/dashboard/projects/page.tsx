@@ -11,7 +11,7 @@ function page() {
       totalLessons: 101,
       completedLessons: 81,
       completionPercentage: '80%',
-      image: '/img/projects/bg%20UIUX1.jpg',
+      image: '/img/projects/BG%20UIUX1.jpg',
     },
     {
       title: 'Digmar',

@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
       }}
     >
       {/* Header */}
-      <div className='card-header text-center' style={{ backgroundColor: '#E0F2F1' }}>
+      <div className='card-header text-center' style={{ backgroundColor: '#ffffff' }}>
         <h5 className='fw-bold' style={{ color: '#00897B' }}>
           {title}
         </h5>
@@ -177,7 +177,7 @@ const ProjectsPage = () => {
                   aria-labelledby={`heading${index}`}
                   data-bs-parent="#skillsAccordion"
                 >
-                  <div className="accordion-body" style={{ backgroundColor: '#F9F9F9' }}>
+                  <div className="accordion-body" style={{ backgroundColor: '#ffffff' }}>
                     <ul>
                       {skill.points.map((point, i) => (
                         <li key={i} style={{ lineHeight: '1.8' }}>

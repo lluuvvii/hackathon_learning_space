@@ -47,8 +47,8 @@ function page() {
               <thead>
                 <tr>
                   <th>Role</th>
-                  <th>Pengajar</th>
-                  <th>Jadwal</th>
+                  <th>Deadline</th>
+                  <th>Jadwal Mulai</th>
                 </tr>
               </thead>
               <tbody>
@@ -65,7 +65,7 @@ function page() {
                 <tr>
                   <td>Frontend</td>
                   <td>---------------</td>
-                  <td style={{ color: '#6f42c1' }}>Rabu, 08:00 - 10:00</td>
+                  <td style={{ color: '#6f42c1' }}>19/12/2024</td>
                 </tr>
                 {/* <tr>
                   <td>Backend</td>
@@ -88,7 +88,7 @@ function page() {
                   overflow: 'hidden',
                 }}
               >
-                <button className='btn' onClick={() => router.push('/dashboard/projects/1')}>
+                <button className='btn' onClick={() => router.push('/dashboard/projects/1/member')}>
                   {/* Project Image */}
                   <div style={{ position: 'relative', width: '120px', height: '100px' }}>
                     <Image

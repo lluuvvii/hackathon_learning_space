@@ -5,6 +5,7 @@ import React from 'react'
 
 import projectCardImg from '@/../public/img/projects/Rectangle_198.png'
 import { FaBookmark } from 'react-icons/fa'
+import { useRouter } from 'next/navigation'
 
 interface ProjectCardProps {
   title: string
@@ -72,6 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
 
 
 const ProjectsPage = () => {
+  const router = useRouter()
   const projects = [
     {
       title: 'UI Design: VisioFlow',
@@ -128,10 +130,6 @@ const ProjectsPage = () => {
     },
   ]
 
-  const handleStart = (title: string) => {
-    alert(`Mulai proyek: ${title}`)
-  }
-
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', marginTop: '100px' }}>
       {/* Main Section */}
@@ -147,7 +145,7 @@ const ProjectsPage = () => {
                   description={project.description}
                   imageSrc={project.imageSrc}
                   altText={project.altText}
-                  onStart={() => handleStart(project.title)}
+                  onStart={() => router.push(`/projects/${index + 1}`)}
                 />
               </div>
             ))}

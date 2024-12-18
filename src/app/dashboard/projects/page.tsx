@@ -11,21 +11,21 @@ function page() {
       totalLessons: 101,
       completedLessons: 81,
       completionPercentage: '80%',
-      image: '/img/projects/Rectangle_198.png',
+      image: '/img/projects/bg%20UIUX1.jpg',
     },
     {
       title: 'Digmar',
       totalLessons: 101,
       completedLessons: 81,
       completionPercentage: '80%',
-      image: '/img/projects/Rectangle_198.png',
+      image: '/img/projects/bg%20product%20manager%201.jpg',
     },
     {
       title: 'Frontend',
       totalLessons: 101,
       completedLessons: 81,
       completionPercentage: '80%',
-      image: '/img/projects/Rectangle_198.png',
+      image: '/img/projects/BG%20DEVELOPER1.jpg',
     },
   ];
   return (

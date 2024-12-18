@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React from 'react'
 
-import projectCardImg from '@/../public/img/projects/Rectangle_198.png'
 import { FaBookmark } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 
@@ -78,19 +77,19 @@ const ProjectsPage = () => {
     {
       title: 'UI Design: VisioFlow',
       description: 'Desain antarmuka modern yang intuitif untuk meningkatkan pengalaman pengguna.',
-      imageSrc: projectCardImg,
+      imageSrc: '/img/projects/bg%20UIUX1.jpg',
       altText: 'UI Design Illustration',
     },
     {
       title: 'Backend: Corelink',
       description: 'Sistem backend scalable dengan keamanan tinggi untuk mendukung aplikasi modern.',
-      imageSrc: projectCardImg,
+      imageSrc: '/img/projects/BG%20DEVELOPER1.jpg',
       altText: 'Backend Illustration',
     },
     {
       title: 'Frontend: Nextview',
       description: 'Antarmuka responsif dengan teknologi terkini untuk pengalaman pengguna yang dinamis.',
-      imageSrc: projectCardImg,
+      imageSrc: '/img/projects/bg%20product%20manager%201.jpg',
       altText: 'Frontend Illustration',
     },
   ]

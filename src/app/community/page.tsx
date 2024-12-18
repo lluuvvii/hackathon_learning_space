@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import projectCardImg from '@/../public/img/projects/Rectangle_198.png'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
@@ -58,19 +57,19 @@ export default function Komunitas() {
     {
       title: 'Product Manager',
       description: ' Kolaborasi, perencanaan, dan pengambilan keputusan terkait pengembangan produk atau pengelolaan proyek.',
-      imageSrc: projectCardImg,
+      imageSrc: '/img/projects/bg%20product%20manager%201.jpg',
       altText: 'UI Design Illustration',
     },
     {
       title: 'UI/UX',
       description: 'kolaborasi dalam pertukaran ide dalam proses desain antarmuka pengguna (UI) dan pengalaman pengguna (UX). ',
-      imageSrc: projectCardImg,
+      imageSrc: '/img/projects/bg%20UIUX1.jpg',
       altText: 'Backend Illustration',
     },
     {
       title: 'Developer',
       description: 'Berfokus pada aspek teknis dari pengembangan, seperti implementasi fitur, arsitektur sistem, integrasi, dan debugging.',
-      imageSrc: projectCardImg,
+      imageSrc: '/img/projects/BG%20DEVELOPER1.jpg',
       altText: 'Frontend Illustration',
     },
   ]

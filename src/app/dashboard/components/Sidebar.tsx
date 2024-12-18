@@ -12,7 +12,7 @@ function Sidebar() {
     { icon: 'bi bi-folder', label: 'Proyek yang sedang berjalan', route: '/dashboard/projects' },
     { icon: 'bi bi-flag', label: 'Tantangan', route: '/dashboard/challenges' },
     { icon: 'bi bi-award', label: 'Sertifikasi & Badges', route: '/dashboard/certificates' },
-    { icon: 'bi bi-file-earmark', label: 'Laporan', route: '/dashboard/reports' },
+    // { icon: 'bi bi-file-earmark', label: 'Laporan', route: '/dashboard/reports' },
   ];
 
   return (

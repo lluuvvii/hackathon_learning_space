@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import { useRouter } from 'next/navigation';
 
-function page() {
+function DashboardProjects() {
   const router = useRouter()
   const projects = [
     // {
@@ -152,4 +152,4 @@ function page() {
   )
 }
 
-export default page
+export default DashboardProjects

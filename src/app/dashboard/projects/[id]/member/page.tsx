@@ -85,7 +85,7 @@ const MemberPage = () => {
             <div className="gap-3 mb-4">
               <p>
                 <strong>Undang anggota untuk bergabung Kelompok Anda</strong> <br />
-                Siapa pun yang memiliki tautan undangan dapat bergabung. Anda bisa menambahkan anggota sebanyak maksimum 8 orang.
+                Siapa pun yang memiliki tautan undangan dapat bergabung.
               </p>
               <button className="btn btn-outline-secondary" style={{ marginRight: 10 }} onClick={handleCopyLink}>
                 Salin Link

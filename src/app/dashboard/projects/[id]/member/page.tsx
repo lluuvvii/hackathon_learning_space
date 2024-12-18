@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import MemberModal from './MemberModal';
 import Sidebar from '../../components/Sidebar';
+import { useRouter } from 'next/navigation';
 
 interface Member {
   id: number;
@@ -12,6 +13,7 @@ interface Member {
 }
 
 const MemberPage = () => {
+  const router = useRouter()
   const [members, setMembers] = useState<Member[]>([
     { id: 1, name: 'luviluvi', email: 'luviluvi@gmail.com', role: 'Front End' },
   ]);
@@ -52,13 +54,16 @@ const MemberPage = () => {
             </div>
 
             {/* Keterangan dan Tombol Salin Link */}
-            <div className="mb-4">
+            <div className="gap-3 mb-4">
               <p>
                 <strong>Undang anggota untuk bergabung Kelompok Anda</strong> <br />
                 Siapa pun yang memiliki tautan undangan dapat bergabung. Anda bisa menambahkan anggota sebanyak maksimum 8 orang.
               </p>
-              <button className="btn btn-outline-secondary" onClick={handleCopyLink}>
+              <button className="btn btn-outline-secondary" style={{ marginRight: 10 }} onClick={handleCopyLink}>
                 Salin Link
+              </button>
+              <button className="btn btn-dark" style={{ backgroundColor: '#00897B' }} onClick={() => router.push('/dashboard/projects/1/chats')}>
+                Chat Diskusi
               </button>
             </div>
             <div className="card shadow-sm">

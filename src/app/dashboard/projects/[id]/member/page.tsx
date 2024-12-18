@@ -31,15 +31,32 @@ const MemberPage = () => {
     setMembers(members.filter((member) => member.id !== id));
   };
 
+  const handleCopyLink = () => {
+    const inviteLink = `${window.location.origin}/invite-link`;
+    navigator.clipboard.writeText(inviteLink);
+    alert('Tautan undangan berhasil disalin!');
+  };
+
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'Arial, sans-serif', marginTop: '75px' }}>
       <div className="container mt-4">
         <div className="row">
           <div className="col-12">
             <div className="d-flex justify-content-between align-items-center mb-4">
-              <h3>Debug Squad</h3>
+              <h3 className='fw-bold' style={{ color: '#00897B' }}>Nextview</h3>
               <button className="btn btn-dark" style={{ backgroundColor: '#00897B' }} onClick={() => setShowModal(true)}>
                 Tambah Anggota
+              </button>
+            </div>
+
+            {/* Keterangan dan Tombol Salin Link */}
+            <div className="mb-4">
+              <p>
+                <strong>Undang anggota untuk bergabung Kelompok Anda</strong> <br />
+                Siapa pun yang memiliki tautan undangan dapat bergabung. Anda bisa menambahkan anggota sebanyak maksimum 8 orang.
+              </p>
+              <button className="btn btn-outline-secondary" onClick={handleCopyLink}>
+                Salin Link
               </button>
             </div>
             <div className="card shadow-sm">

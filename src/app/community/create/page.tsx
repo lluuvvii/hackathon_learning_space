@@ -6,10 +6,6 @@ import Head from "next/head";
 const BuatRuang = () => {
   return (
     <>
-      <Head>
-        <title>Buat Ruang Diskusi</title>
-        <meta name="description" content="Halaman untuk membuat ruang diskusi baru" />
-      </Head>
       <div
         className="d-flex align-items-center justify-content-center"
         style={{

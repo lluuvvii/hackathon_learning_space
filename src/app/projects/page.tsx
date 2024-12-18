@@ -76,19 +76,19 @@ const ProjectsPage = () => {
     {
       title: 'UI Design: VisioFlow',
       description: 'Desain antarmuka modern yang intuitif untuk meningkatkan pengalaman pengguna.',
-      imageSrc: '/img/projects/BG%20UIUX1.jpg',
+      imageSrc: '/img/projects/bg_uiux.jpg',
       altText: 'UI Design Illustration',
     },
     {
       title: 'Backend: Corelink',
       description: 'Sistem backend scalable dengan keamanan tinggi untuk mendukung aplikasi modern.',
-      imageSrc: '/img/projects/BG%20DEVELOPER1.jpg',
+      imageSrc: '/img/projects/bg_developer.jpg',
       altText: 'Backend Illustration',
     },
     {
       title: 'Frontend: Nextview',
       description: 'Antarmuka responsif dengan teknologi terkini untuk pengalaman pengguna yang dinamis.',
-      imageSrc: '/img/projects/bg%20product%20manager%201.jpg',
+      imageSrc: '/img/projects/bg_product_manager.jpg',
       altText: 'Frontend Illustration',
     },
   ]

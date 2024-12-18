@@ -57,19 +57,19 @@ export default function Komunitas() {
     {
       title: 'Product Manager',
       description: ' Kolaborasi, perencanaan, dan pengambilan keputusan terkait pengembangan produk atau pengelolaan proyek.',
-      imageSrc: '/img/projects/bg%20product%20manager%201.jpg',
+      imageSrc: '/img/projects/bg_product_manager.jpg',
       altText: 'UI Design Illustration',
     },
     {
       title: 'UI/UX',
       description: 'kolaborasi dalam pertukaran ide dalam proses desain antarmuka pengguna (UI) dan pengalaman pengguna (UX). ',
-      imageSrc: '/img/projects/BG%20UIUX1.jpg',
+      imageSrc: '/img/projects/bg_uiux.jpg',
       altText: 'Backend Illustration',
     },
     {
       title: 'Developer',
       description: 'Berfokus pada aspek teknis dari pengembangan, seperti implementasi fitur, arsitektur sistem, integrasi, dan debugging.',
-      imageSrc: '/img/projects/BG%20DEVELOPER1.jpg',
+      imageSrc: '/img/projects/bg_developer.jpg',
       altText: 'Frontend Illustration',
     },
   ]

@@ -1,30 +1,34 @@
+'use client'
+
 import React from 'react'
 import Sidebar from '../components/Sidebar'
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import { useRouter } from 'next/navigation';
 
 function page() {
+  const router = useRouter()
   const projects = [
-    {
-      title: 'UI/UX',
-      totalLessons: 101,
-      completedLessons: 81,
-      completionPercentage: '80%',
-      image: '/img/projects/bg_uiux.jpg',
-    },
-    {
-      title: 'Digmar',
-      totalLessons: 101,
-      completedLessons: 81,
-      completionPercentage: '80%',
-      image: '/img/projects/bg_product_manager.jpg',
-    },
+    // {
+    //   title: 'UI/UX',
+    //   totalLessons: 101,
+    //   completedLessons: 81,
+    //   completionPercentage: '80%',
+    //   image: '/img/projects/bg_uiux.jpg',
+    // },
+    // {
+    //   title: 'Digmar',
+    //   totalLessons: 101,
+    //   completedLessons: 81,
+    //   completionPercentage: '80%',
+    //   image: '/img/projects/bg_product_manager.jpg',
+    // },
     {
       title: 'Frontend',
-      totalLessons: 101,
-      completedLessons: 81,
-      completionPercentage: '80%',
+      totalLessons: 100,
+      completedLessons: 0,
+      completionPercentage: '0%',
       image: '/img/projects/bg_developer.jpg',
     },
   ];
@@ -42,32 +46,32 @@ function page() {
             <table className='table table-bordered' style={{ backgroundColor: '#e0f4f3' }}>
               <thead>
                 <tr>
-                  <th>Pelajaran</th>
+                  <th>Role</th>
                   <th>Pengajar</th>
                   <th>Jadwal</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                {/* <tr>
                   <td>UI/UX Design</td>
                   <td>---------------</td>
                   <td style={{ color: '#6c757d' }}>Senin, 08:00 - 10:00</td>
-                </tr>
-                <tr>
+                </tr> */}
+                {/* <tr>
                   <td>Digital Marketing</td>
                   <td>---------------</td>
                   <td style={{ color: '#28a745' }}>Selasa, 10:00 - 12:00</td>
-                </tr>
+                </tr> */}
                 <tr>
                   <td>Frontend</td>
                   <td>---------------</td>
                   <td style={{ color: '#6f42c1' }}>Rabu, 08:00 - 10:00</td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <td>Backend</td>
                   <td>---------------</td>
                   <td style={{ color: '#ffc107' }}>Kamis, 12:00 - 14:00</td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>
@@ -84,24 +88,25 @@ function page() {
                   overflow: 'hidden',
                 }}
               >
-                {/* Project Image */}
-                <div style={{ position: 'relative', width: '120px', height: '100px' }}>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    layout='fill'
-                    objectFit='cover'
-                  />
-                </div>
-
+                <button className='btn' onClick={() => router.push('/dashboard/projects/1')}>
+                  {/* Project Image */}
+                  <div style={{ position: 'relative', width: '120px', height: '100px' }}>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      layout='fill'
+                      objectFit='cover'
+                    />
+                  </div>
+                </button>
                 {/* Project Info */}
                 <div className='flex-grow-1 p-3'>
                   <h5 className='mb-1'>{project.title}</h5>
-                  <p className='mb-1'>
+                  {/* <p className='mb-1'>
                     Total Pelajaran <b>{project.totalLessons}</b>
-                  </p>
+                  </p> */}
                   <p className='mb-1'>
-                    Pelajaran Selesai <b>{project.completedLessons}/{project.totalLessons}</b>
+                    Progress Selesai <b>{project.completedLessons}/{project.totalLessons}</b>
                   </p>
                   <div
                     className='progress'

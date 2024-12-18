@@ -15,6 +15,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, altText, onStart }) => {
+  const router = useRouter()
   return (
     <div
       className='card h-100'
@@ -60,7 +61,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
             style={{
               border: 'none'
             }}
-            onClick={() => alert('Project ditambahkan ke bookmark!')} // Tambahkan logika bookmark di sini
+            onClick={() => {
+              alert('Project ditambahkan ke bookmark!')
+              router.push('/dashboard/projects')
+            }} // Tambahkan logika bookmark di sini
           >
             <FaBookmark size={18} style={{ verticalAlign: 'middle' }} />
           </button>

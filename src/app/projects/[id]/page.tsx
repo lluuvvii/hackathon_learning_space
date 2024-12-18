@@ -1,10 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, { useState, DragEvent } from 'react';
 import { useRouter } from 'next/navigation';
+
+interface FileUploadState {
+  file: File | null;
+  error: string | null;
+}
 
 export default function ProjectDetail() {
   const router = useRouter()
+  const [uploadState, setUploadState] = useState<FileUploadState>({
+    file: null,
+    error: null,
+  });
 
   const accordionData = [
     {
@@ -70,6 +79,35 @@ export default function ProjectDetail() {
     },
   ];
 
+  const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const files = e.dataTransfer.files;
+
+    if (files.length > 0) {
+      const uploadedFile = files[0];
+      if (uploadedFile.type.startsWith('application/')) {
+        setUploadState({ file: uploadedFile, error: null });
+      } else {
+        setUploadState({ file: null, error: 'File yang diunggah harus berupa dokumen!' });
+      }
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (uploadState.file) {
+      alert(`File "${uploadState.file.name}" berhasil diunggah!`);
+    } else {
+      alert('Harap unggah file proyek terlebih dahulu!');
+    }
+  };
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', marginTop: '100px' }}>
       {/* Detail Proyek */}
@@ -107,6 +145,55 @@ export default function ProjectDetail() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Drag and Drop Upload */}
+        <div
+          className="upload-section mt-4 p-4 text-center"
+          style={{
+            border: '2px dashed #00897B',
+            borderRadius: '10px',
+            backgroundColor: '#F9F9F9',
+            color: '#00897B',
+          }}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+        >
+          <p className="fw-bold mb-3">Seret dan jatuhkan file Anda di sini</p>
+          <p className="small">Atau klik tombol di bawah untuk memilih file</p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="file"
+              id="fileInput"
+              className="form-control mb-3"
+              style={{ display: 'inline-block', maxWidth: '300px' }}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file && file.type.startsWith('application/')) {
+                  setUploadState({ file, error: null });
+                } else {
+                  setUploadState({ file: null, error: 'File yang diunggah harus berupa dokumen!' });
+                }
+              }}
+            />
+            {uploadState.file && (
+              <p className="text-success">
+                File dipilih: <strong>{uploadState.file.name}</strong>
+              </p>
+            )}
+            {uploadState.error && (
+              <p className="text-danger">
+                <strong>{uploadState.error}</strong>
+              </p>
+            )}
+            <button
+              type="submit"
+              className="btn mx-3"
+              style={{ backgroundColor: '#00897B', color: '#FFFFFF' }}
+            >
+              Unggah File
+            </button>
+          </form>
         </div>
 
         {/* Tombol Submit dan Kembali */}

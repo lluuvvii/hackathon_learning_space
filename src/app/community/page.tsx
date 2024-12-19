@@ -43,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
       <div className='card-body text-center'>
         <p className='card-text'>{description}</p>
         <div className='d-flex justify-content-end'>
-          <button className='btn btn-success' onClick={() => router.push('/community/3')}>
+          <button className='btn btn-success' onClick={() => router.push('/community/developer')}>
             <IoIosArrowForward size={20} />
           </button>
         </div>

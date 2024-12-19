@@ -10,9 +10,10 @@ interface ProjectCardProps {
   description: string
   imageSrc: any
   altText: string
+  router: any
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, altText }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, altText, router }) => {
   return (
     <div
       className='card h-100'
@@ -42,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc,
       <div className='card-body text-center'>
         <p className='card-text'>{description}</p>
         <div className='d-flex justify-content-end'>
-          <button className='btn btn-success'>
+          <button className='btn btn-success' onClick={() => router.push('/community/3')}>
             <IoIosArrowForward size={20} />
           </button>
         </div>
@@ -95,7 +96,7 @@ export default function Komunitas() {
             marginBottom: '10px',
           }}
         >
-          Selamat Datang di Forum Diskusi!!
+          Temukan Ruang Diskusi
         </h1>
         <p
           style={{
@@ -117,7 +118,7 @@ export default function Komunitas() {
           }}
         >
           {/* Button Buat Ruang */}
-          <button
+          {/* <button
             onClick={() => router.push('/community/create')}
             style={{
               display: 'flex',
@@ -134,7 +135,7 @@ export default function Komunitas() {
           >
             <i className='bi bi-plus-circle'></i>
             Buat Ruang
-          </button>
+          </button> */}
 
           {/* Input Cari */}
           <div
@@ -172,11 +173,11 @@ export default function Komunitas() {
         </div>
       </section>
 
-      <div className='container d-flex justify-content-center mt-5'>
+      {/* <div className='container d-flex justify-content-center mt-5'>
         <h1 className='fw-bold' style={{ color: '#00897B' }}>
           Temukan Ruang Diskusi
         </h1>
-      </div>
+      </div> */}
 
       {/* Discussion Cards */}
       <div className='container mt-5'>
@@ -188,6 +189,7 @@ export default function Komunitas() {
                 description={project.description}
                 imageSrc={project.imageSrc}
                 altText={project.altText}
+                router={router}
               />
             </div>
           ))}

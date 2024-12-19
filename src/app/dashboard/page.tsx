@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Image from 'next/image'
 
 export default function Dashboard() {
+  const progress = 0;
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'Arial, sans-serif', marginTop: '75px' }}>
       {/* Sidebar */}
@@ -17,29 +18,45 @@ export default function Dashboard() {
         {/* Dashboard Content */}
         <main style={{ padding: '20px' }}>
           {/* Progress Statistics */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '15px',
-              justifyContent: 'space-between',
-            }}
-          >
-            <StatCard title='Progres Belajar' value='50%' color='#007c70' />
-            <StatCard
-              title='Tantangan'
-              value='30%'
-              color='#ffffff'
-              textColor='#000000'
-              border='1px solid #ccc'
-            />
-            <StatCard
-              title='Laporan'
-              value='20%'
-              color='#ffffff'
-              textColor='#000000'
-              border='1px solid #ccc'
-            />
+          <div>
+            <div
+              className='card shadow-sm d-flex flex-row align-items-center p-3'
+              style={{
+                backgroundColor: '#ffffff',
+                border: 'none',
+                borderRadius: '10px',
+              }}
+            >
+              <div
+                className='d-flex justify-content-center align-items-center'
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#00897B',
+                  color: '#ffffff',
+                  borderRadius: '50%',
+                  marginRight: '15px',
+                }}
+              >
+                <i className='bi bi-bar-chart-fill fs-4'></i>
+              </div>
+              <div>
+                <p className='mb-1' style={{ fontWeight: 'bold', color: '#00897B' }}>
+                  Progress Proyek
+                </p>
+                <div className='progress' style={{ height: '10px', width: '300px' }}>
+                  <div
+                    className='progress-bar'
+                    role='progressbar'
+                    style={{
+                      width: `${progress}%`,
+                      backgroundColor: '#00897B',
+                    }}
+                  ></div>
+                </div>
+                <small style={{ color: '#666' }}>{progress}% Selesai</small>
+              </div>
+            </div>
           </div>
 
           {/* Deadline Section */}

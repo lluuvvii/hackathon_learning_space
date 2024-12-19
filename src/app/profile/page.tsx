@@ -1,11 +1,46 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 export default function UserProfile() {
+  // State untuk menyimpan data profil
+  const [profile, setProfile] = useState({
+    name: 'luviluvi',
+    bio: 'Never give up',
+    email: 'luviluvi@gmail.com',
+    skills: 'Frontend Developer',
+  });
+
+  // State untuk mengelola mode edit
+  const [isEditing, setIsEditing] = useState(false);
+
+  // State untuk mengelola input sementara
+  const [tempProfile, setTempProfile] = useState(profile);
+
+  // Handler untuk menyimpan perubahan
+  const handleSave = () => {
+    setProfile(tempProfile);
+    setIsEditing(false);
+  };
+
+  // Handler untuk membatalkan perubahan
+  const handleCancel = () => {
+    setTempProfile(profile);
+    setIsEditing(false);
+  };
+
+  // Handler untuk menangani input perubahan
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setTempProfile({ ...tempProfile, [name]: value });
+  };
+
   return (
     <div style={{ marginTop: '100px', marginBottom: '100px' }}>
       <div className="container">
-        <div className='row'>
+        <div className="row">
           {/* Sidebar */}
           <div className="col-md-3">
             <div
@@ -24,8 +59,8 @@ export default function UserProfile() {
                   height={80}
                   className="rounded-circle"
                 />
-                <h5 style={{ color: '#00897B', fontWeight: 'bold' }}>Kelvin Marsellino</h5>
-                <p style={{ color: '#8D8D8D', margin: '0' }}>Silver Member</p>
+                <h5 style={{ color: '#00897B', fontWeight: 'bold' }}>{profile.name}</h5>
+                <p style={{ color: '#8D8D8D', margin: '0' }}>{profile.bio}</p>
               </div>
               <ul
                 style={{
@@ -48,16 +83,22 @@ export default function UserProfile() {
                   Profil
                 </li>
                 <li style={{ padding: '10px 0', borderBottom: '1px solid #E0E0E0' }}>
-                  <i className="bi bi-graph-up" style={{ marginRight: '8px' }}></i>
-                  Progres Belajar
+                  <Link href='/dashboard/projects' className='text-decoration-none' style={{ color: '#00897B' }}>
+                    <i className="bi bi-graph-up" style={{ marginRight: '8px' }}></i>
+                    Progres Belajar
+                  </Link>
                 </li>
                 <li style={{ padding: '10px 0', borderBottom: '1px solid #E0E0E0' }}>
-                  <i className="bi bi-patch-check" style={{ marginRight: '8px' }}></i>
-                  Sertifikat dan Badges
+                  <Link href='/dashboard/certificates' className='text-decoration-none' style={{ color: '#00897B' }}>
+                    <i className="bi bi-patch-check" style={{ marginRight: '8px' }}></i>
+                    Sertifikat dan Badges
+                  </Link>
                 </li>
                 <li style={{ padding: '10px 0' }}>
-                  <i className="bi bi-folder-check" style={{ marginRight: '8px' }}></i>
-                  Proyek yang Selesai
+                  <Link href='/dashboard/projects' className='text-decoration-none' style={{ color: '#00897B' }}>
+                    <i className="bi bi-folder-check" style={{ marginRight: '8px' }}></i>
+                    Proyek yang Selesai
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -108,37 +149,92 @@ export default function UserProfile() {
                       padding: '15px',
                     }}
                   >
-                    <div className="row">
-                      <div className="col-md-6 mb-3">
-                        <strong style={{ color: '#4A4A4A' }}>Nama Lengkap:</strong>
-                        <p style={{ color: '#00897B', margin: '0' }}>Kelvin Marsellino</p>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <strong style={{ color: '#4A4A4A' }}>Bio:</strong>
-                        <p style={{ color: '#00897B', margin: '0' }}>Mahasiswa Penyuka Kompetisi</p>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <strong style={{ color: '#4A4A4A' }}>Email:</strong>
-                        <p style={{ color: '#00897B', margin: '0' }}>Kelvin@gmail.com</p>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <strong style={{ color: '#4A4A4A' }}>Keterampilan:</strong>
-                        <p style={{ color: '#00897B', margin: '0' }}>UI/UX Design</p>
-                      </div>
-                    </div>
+                    {isEditing ? (
+                      <>
+                        <div className="row">
+                          <div className="col-md-6 mb-3">
+                            <label><strong>Nama Lengkap:</strong></label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              name="name"
+                              value={tempProfile.name}
+                              onChange={handleInputChange}
+                            />
+                          </div>
+                          <div className="col-md-6 mb-3">
+                            <label><strong>Bio:</strong></label>
+                            <textarea
+                              className="form-control"
+                              name="bio"
+                              value={tempProfile.bio}
+                              onChange={handleInputChange}
+                            />
+                          </div>
+                          <div className="col-md-6 mb-3">
+                            <label><strong>Email:</strong></label>
+                            <input
+                              type="email"
+                              className="form-control"
+                              name="email"
+                              value={tempProfile.email}
+                              onChange={handleInputChange}
+                            />
+                          </div>
+                          <div className="col-md-6 mb-3">
+                            <label><strong>Keterampilan:</strong></label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              name="skills"
+                              value={tempProfile.skills}
+                              onChange={handleInputChange}
+                            />
+                          </div>
+                        </div>
+                        <button className="btn btn-success me-2" onClick={handleSave}>
+                          Simpan
+                        </button>
+                        <button className="btn btn-secondary" onClick={handleCancel}>
+                          Batal
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <div className="row">
+                          <div className="col-md-6 mb-3">
+                            <strong style={{ color: '#4A4A4A' }}>Nama Lengkap:</strong>
+                            <p style={{ color: '#00897B', margin: '0' }}>{profile.name}</p>
+                          </div>
+                          <div className="col-md-6 mb-3">
+                            <strong style={{ color: '#4A4A4A' }}>Bio:</strong>
+                            <p style={{ color: '#00897B', margin: '0' }}>{profile.bio}</p>
+                          </div>
+                          <div className="col-md-6 mb-3">
+                            <strong style={{ color: '#4A4A4A' }}>Email:</strong>
+                            <p style={{ color: '#00897B', margin: '0' }}>{profile.email}</p>
+                          </div>
+                          <div className="col-md-6 mb-3">
+                            <strong style={{ color: '#4A4A4A' }}>Keterampilan:</strong>
+                            <p style={{ color: '#00897B', margin: '0' }}>{profile.skills}</p>
+                          </div>
+                        </div>
+                        <button
+                          className="btn btn-outline-success btn-sm mt-3"
+                          style={{ borderRadius: '20px' }}
+                          onClick={() => setIsEditing(true)}
+                        >
+                          Edit Profil
+                        </button>
+                      </>
+                    )}
                   </div>
-                  <button
-                    className="btn btn-outline-success btn-sm mt-3"
-                    style={{ borderRadius: '20px' }}
-                  >
-                    Edit Profil
-                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
